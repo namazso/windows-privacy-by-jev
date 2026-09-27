@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Politikker for lejerbegrænsning</displayName>
+  <description>Prototypepolitikker for lejerbegrænsninger v2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Lejerbegrænsninger</string>
+      <string id="trv2_payload">Oplysninger om cloud-politikken</string>
+      <string id="trv2_payload_EXPLAIN">
+          Denne indstilling aktiverer og konfigurerer funktionen til enhedsbaserede lejerbegrænsninger for Azure Active Directory.
+
+          Når du aktiverer denne indstilling, forhindres programmer, der overholder angivne standarder, i at få adgang til ikke-tilladte lejere i henhold til en politik, der er angivet i din Azure AD-lejer.
+
+          Bemærk! Det er påkrævet at oprette en politik i din hjemmelejer, og yderligere sikkerhedsforanstaltninger for administrerede enheder anbefales for at opnå den bedste beskyttelse. Se Begrænsninger for Azure AD-lejere for at få flere oplysninger.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Før du aktiverer firewallbeskyttelse, skal du sikre dig, at en politik for App Control til virksomheder, der mærker programmer korrekt, er blevet anvendt på destinationsenhederne. Hvis du aktiverer firewallbeskyttelse uden en tilsvarende politik for App Control til virksomheder, forhindres alle programmer i at nå Microsofts slutpunkter. Denne firewallindstilling understøttes ikke i alle versioner af Windows. Se følgende link for at få flere oplysninger.
+          Du kan finde oplysninger om konfiguration af WDAC med lejerbegrænsninger under https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>Cloud-ID (valgfrit):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>Microsoft Azure Active Directory ID:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>Politik GUID:</label></textBox>
+        <checkBox refId="EnforceFirewall">Aktivér firewallbeskyttelse af Microsoft-slutpunkter</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Værtsnavne (valgfrit):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Understøttede værtsnavne for underdomæner (valgfri):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">IP-områder (valgfrit):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

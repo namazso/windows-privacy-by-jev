@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Windows Cihaz Koruyucu</displayName>
+  <description>Windows Cihaz Koruyucu Güvenliği</description>
+  <resources>
+    <stringTable>
+      <string id="DeviceGuard">Cihaz Koruyucu</string>
+      <string id="VirtualizationBasedSecurity">Sanallaştırma Tabanlı Güvenlik'i aç</string>
+      <string id="VirtualizationBasedSecurityHelp">
+          Sanallaştırma Tabanlı Güvenliğin etkin olup olmadığını belirtir.
+
+          Sanallaştırma Tabanlı Güvenlik, güvenlik hizmetleri için destek sağlamak için Windows Hiper Yöneticisini kullanır. Sanallaştırma Tabanlı Güvenlik için Güvenli Önyükleme gereklidir ve isteğe bağlı olarak DMA Korumalarının kullanımıyla etkinleştirilebilir. DMA korumaları için donanım desteği gereklidir ve yalnızca doğru yapılandırılmış cihazlarda etkinleştirilir.
+
+          Kod Bütünlüğü için Sanallaştırma Tabanlı Koruma
+
+          Bu ayar, Çekirdek Modu Kod Bütünlüğünün sanallaştırma tabanlı olmasını korumasını etkinleştirir. Bu etkinleştirildiğinde, çekirdek modu bellek korumaları uygulanır ve Kod Bütünlüğü doğrulama yolu Sanallaştırma Tabanlı Güvenlik özelliği tarafından korunur.
+
+          "Devre Dışı" seçeneği, daha önce "Kilit olmadan etkinleştirildi" seçeneğiyle açık olarak ayarlanmışsa Kod Bütünlüğünün Sanallaştırma Tabanlı Korumasını uzaktan devre dışı bırakır.
+
+          "UEFI kilidiyle etkinleştirildi" seçeneği, Kod Bütünlüğünün Sanallaştırma Tabanlı Korumasının uzaktan devre dışı bırakılmamasını sağlar. Özelliği devre dışı bırakmak için, UEFI'deki kalıcı yapılandırmayı kaldırmak üzere Grup İlkesini "Devre Dışı" olarak ayarlamanız ve ayrıca fiziksel olarak mevcut bir kullanıcının bulunduğu her bilgisayardan güvenlik işlevini kaldırmanız gerekir.
+
+          "Kilit olmadan etkinleştirildi" seçeneği, Kod Bütünlüğünün Sanallaştırma Tabanlı Korumasının Grup İlkesi kullanılarak uzaktan devre dışı bırakılmasını sağlar.
+
+          "Yapılandırılmadı" seçeneği ilke ayarını tanımsız bırakır. Grup İlkesi ilke ayarını kayıt defterine yazmaz ve bu nedenle bilgisayarlar veya kullanıcılar üzerinde etkisi yoktur. Kayıt defterinde geçerli bir ayar varsa bu ayar değiştirilmez.
+
+          "UEFI Bellek Öznitelikleri Tablosu Gerektir" seçeneği yalnızca Bellek Öznitelikleri Tablosu için UEFI üretici yazılımı desteğine sahip cihazlarda Kod Bütünlüğünün Sanallaştırma Tabanlı Korumasını etkinleştirir. UEFI Bellek Öznitelikleri Tablosu olmayan cihazlarda, Kod Bütünlüğünün Sanallaştırma Tabanlı Koruması ile uyumlu olmayan üretici yazılımı olabilir ve bu bazı durumlarda kilitlenmelere, veri kaybına veya belirli eklenti kartlarıyla uyumsuzluklara yol açabilir. Bu seçenek ayarlanmazsa, uyumluluğu sağlamak için hedeflenen cihazların test edilmesi gerekir.
+
+          Uyarı: Sistemdeki tüm sürücüler bu özellikle uyumlu olmalıdır, yoksa sistem kilitlenebilir. Bu ilke ayarının yalnızca uyumlu olduğu bilinen bilgisayarlara dağıtıldığından emin olun.
+
+          Credential Guard
+
+          Bu ayar, kullanıcıların kimlik bilgilerinin korunmasına yardımcı olmak için sanallaştırma tabanlı güvenlik sağlayan Credential Guard özelliğini açmasını sağlar.
+
+          Windows 11 21H2 ve öncesi sürümlerde, daha önce "Kilit olmadan etkinleştirildi" seçeneğiyle açık olarak ayarlanmışsa "Devre Dışı" seçeneği Credential Guard özelliğini uzaktan devre dışı bırakır. Sonraki sürümlerde, daha önce "Kilit olmadan etkinleştirildi" seçeneğiyle açık olarak ayarlanmışsa veya "Yapılandırılmadı" durumunda ise "Devre Dışı" seçeneği Credential Guard özelliğini uzaktan devre dışı bırakır.
+
+          "UEFI kilidiyle etkinleştirildi" seçeneği Credential Guard'ın uzaktan devre dışı bırakılmamasını sağlar. Özelliği devre dışı bırakmak için, UEFI'deki kalıcı yapılandırmayı kaldırmak üzere Grup İlkesini "Devre Dışı" olarak ayarlamanız ve ayrıca fiziksel olarak mevcut bir kullanıcının bulunduğu her bilgisayardan güvenlik işlevini kaldırmanız gerekir.
+
+          "Kilit olmadan etkinleştirildi" seçeneği, Credential Guard özelliğinin Grup İlkesi Kullanılarak uzaktan devre dışı bırakılmasını sağlar. Bu ayarı kullanan cihazların en az Windows 10 (Sürüm 1511) çalıştırıyor olması gerekir.
+
+          Windows 11 21H2 ve öncesi sürümlerde, "Yapılandırılmadı" seçeneği ilke ayarını tanımsız bırakır. Grup İlkesi ilke ayarını kayıt defterine yazmaz ve bu nedenle bilgisayarlar veya kullanıcılar üzerinde etkisi yoktur. Kayıt defterinde geçerli bir ayar varsa bu ayar değiştirilmez. Sonraki sürümlerde, kayıt defterinde geçerli bir ayar yoksa, "Yapılandırılmadı" seçeneği Credential Guard'ı UEFI kilidi olmadan etkinleştirir.
+
+          Makine Kimliği Yalıtımı
+
+          Bu ayar, Active Directory makine hesaplarının Credential Guard ile korunmasını denetler. Bu ilkeyi etkinleştirmek için belirli önkoşullar vardır. Bu ilkeyle ilgili önkoşullar ve daha fazla bilgi için https://go.microsoft.com/fwlink/?linkid=2251066 adresini ziyaret edebilirsiniz.
+
+          "Yapılandırılmadı" seçeneği ilke ayarını tanımsız bırakır. Grup İlkesi ilke ayarını kayıt defterine yazmaz ve bu nedenle bilgisayarlar veya kullanıcılar üzerinde etkisi yoktur. Kayıt defterinde geçerli bir ayar varsa bu ayar değiştirilmez.
+
+          "Devre Dışı" seçeneği, Makine Kimliği Yalıtımını devre dışı bırakır. Bu ilke daha önce "Denetleme modunda etkinleştirildi" olarak ayarlandıysa başka bir eylem gerekmez. Bu ilke daha önce "Zorlama modunda etkin" olarak ayarlandıysa cihazın etki alanından çıkarılarak tekrar etki alanına eklenmesi gerekir. Daha fazla ayrıntıyı yukarıdaki bağlantıda bulabilirsiniz.
+
+          "Denetleme modunda etkin" seçeneği, makine kimliğini Credential Guard'a kopyalar. Hem LSA hem de Credential Guard makine kimliğine erişebilir. Bu, kullanıcıların "Zorlama modunda etkin" seçeneğinin Active Directory Etki Alanlarında çalışacağını doğrulamalarına izin verir.
+
+          "Zorlama modunda etkin" seçeneği, makine kimliğini Credential Guard'a taşır. Bu, makine kimliğinin yalnızca Credential Guard için erişilebilir olmasını sağlar.
+
+          Güvenli Başlatma
+
+          Bu ayar, önyükleme zincirinin güvenliğini sağlamak için Güvenli Başlatma özelliğinin yapılandırmasını ayarlar.
+
+          "Yapılandırılmadı" ayarı varsayılan ayardır ve özelliğin Yönetici kullanıcılar tarafından yapılandırılabilmesini sağlar.
+
+          "Etkin" seçeneği, desteklenen donanımda Güvenli Başlatma özelliğini açar.
+
+          "Devre Dışı" seçeneği, donanım desteğine bakılmaksızın Güvenli Başlatmayı devre dışı bırakır.
+
+          Çekirdek Modu Donanım Tarafından Uygulanan Yığın Koruması
+
+          Bu ayar, çekirdek modu kodu için donanım tarafından uygulanan yığın korumasını etkinleştirir. Bu güvenlik özelliği etkinleştirildiğinde, çekirdek modu veri yığınları, program denetim akışının değiştirilmemesini sağlamak için amaçlanan dönüş adresi hedeflerini depolayan donanım tabanlı gölge yığınlarla güçlendirilir.
+
+          Bu güvenlik özelliği aşağıdaki önkoşullara sahiptir:
+          1) CPU donanımı, donanım tabanlı gölge yığınlarını destekler.
+          2) Kod Bütünlüğü için Sanallaştırma Tabanlı Koruma etkindir.
+
+          Önkoşullardan biri karşılanmazsa, bu özellik için bir "Etkin" seçeneği seçili olsa bile bu özellik etkinleştirilmez. Bu özellik için "Etkin" seçeneği belirtildiğinde, Kod Bütünlüğünün Sanallaştırma Tabanlı Koruması otomatik olarak etkinleştirilmez ve ayrı olarak etkinleştirilmesi gerekir.
+
+          Bu güvenlik özelliğini etkinleştiren cihazların en az Windows 11 (Sürüm 22H2) çalıştırıyor olması gerekir.
+
+          "Devre Dışı" seçeneği çekirdek modu donanım tarafından uygulanan yığın korumasını kapatır.
+
+          "Denetleme modunda etkin" seçeneği, çekirdek modu donanım tarafından uygulanan yığın korumasını gölge yığın ihlallerinin kritik olarak değerlendirilmediği denetim modunda etkinleştirir ve ihlaller sistem olay günlüğüne kaydedilir.
+
+          "Zorlama modunda etkin" seçeneği, çekirdek modu donanım tarafından uygulanan yığın korumasını gölge yığın ihlallerinin kritik olarak değerlendirildiği zorlama modunda etkinleştirir.
+
+          "Yapılandırılmadı" seçeneği ilke ayarını tanımsız bırakır. Grup İlkesi ilke ayarını kayıt defterine yazmaz ve bu nedenle bilgisayarlar veya kullanıcılar üzerinde etkisi yoktur. Kayıt defterinde geçerli bir ayar varsa bu ayar değiştirilmez.
+
+          Uyarı: Sistemdeki tüm sürücüler bu güvenlik özelliğiyle uyumlu olmalıdır, yoksa sistem zorlama modunda kilitlenebilir. Denetleme modu, uyumsuz sürücüleri bulmak için kullanılabilir. Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=2162953.
+      </string>
+      <string id="SecureBoot">Güvenli Önyükleme</string>
+      <string id="SecureBootAndDmaProtection">Güvenli Önyükleme ve DMA Koruması</string>
+      <string id="Disabled">Devre Dışı</string>
+      <string id="Enabled">Etkin</string>
+      <string id="EnabledWithoutLock">Kilitsiz etkin</string>
+      <string id="EnabledWithUefiLock">UEFI kilidi ile etkin</string>
+      <string id="EnabledAudit">Denetim modunda etkinleştirildi</string>
+      <string id="EnabledEnforcement">Zorlama modunda etkinleştirildi</string>
+      <string id="NotConfigured">Yapılandırılmadı</string>
+      <string id="ConfigCIPolicy">İş için Uygulama Denetimini Dağıtın</string>
+      <string id="ConfigCIPolicyHelp">İş İçin Uygulama Denetimi Dağıt
+
+Bu ilke ayarı, makinede çalışmasına izin verilenleri kontrol etmek için bir makineye Kod Bütünlüğü İlkesi dağıtmanıza izin sağlar.
+
+Bir Kod Bütünlüğü İlkesi dağıtmazsanız Windows, hem çekirdek modunda hem de Windows Masaüstü'ne çalıştırılacakları ilkeye göre kısıtlar. Bu ilkeyi etkinleştirmek için makinenin yeniden başlatılması gerekiyor.
+
+Dosya yolu bir UNC yolu (örneğin, \\ServerName\ShareName\SIPolicy.p7b) veya yerel olarak geçerli bir yol (örneğin, C:\FolderName\SIPolicy.p7b) olmalıdır.  Yerel makine hesabının (LOCAL SYSTEM) ilke dosyasına erişim izni olmalıdır.
+
+İmzalı ve korumalı bir ilke kullanıyorsanız, bu ilke ayarını devre dışı bırakma özelliği bilgisayarınızdan kaldırmaz. Bunun yerine, şu iki işlemi de yapabilirsiniz:
+
+1) önce ilkeyi korumalı olmayan bir ilkeye güncelleştirin ve ardından ayarı devre dışı bırakın veya
+   2) ayarı devre dışı bırakın ve sonra fiziksel olarak var olan bir kullanıcıyla ilkeyi her bilgisayarda kaldırın.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="VirtualizationBasedSecurity">
+        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Platform Güvenlik Düzeyi seç:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Kod Bütünlüğü için Sanallaştırma Tabanlı Koruma:</dropdownList>
+        <checkBox refId="CheckboxMAT">UEFI Bellek Öznitelik Tablosu İste</checkBox>
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Credential Guard Yapılandırması:</dropdownList>
+        <dropdownList refId="MachineIdentityIsolationDrop" defaultItem="3">Machine Identity Isolation Configuration:</dropdownList>
+        <dropdownList refId="SystemGuardDrop" defaultItem="2">Güvenli Başlatma Yapılandırması:</dropdownList>
+        <dropdownList refId="KernelShadowStacksDrop" defaultItem="3">Çekirdek modu Donanım zorlamalı Yığın Koruması:</dropdownList>
+      </presentation>
+      <presentation id="ConfigCIPolicy">
+        <textBox refId="ConfigCIPolicyFilePathText">
+          <label>Kod Bütünlüğü İlkesi dosya yolu:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

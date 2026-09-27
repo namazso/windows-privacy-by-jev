@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://www.microsoft.com/GroupPolicy/PolicyDefinitions">
+  <displayName>Undgå OneDrive-filsynkronisering</displayName>
+  <description>Undgå, at filer bliver synkroniseret med OneDrive</description>
+  <resources>
+    <stringTable>
+      <!-- general -->
+      <string id="OneDriveSettingCategory">OneDrive</string>
+
+      <!-- prevent file sync-->
+      <string id="PreventOneDriveFileSync">Undgå brug af OneDrive til lagring af filer</string>
+      <string id="PreventOneDriveFileSync_help">Med denne politikindstilling kan du forhindre apps og funktioner i at arbejde med filer på OneDrive.
+Hvis du aktiverer denne politikindstilling:
+
+* Brugere kan ikke få adgang til OneDrive fra OneDrive-appen og filvælgeren.
+* Pakkede Microsoft Store-apps kan ikke få adgang til OneDrive ved hjælp af WinRT-API'en.
+* OneDrive vises ikke i navigationsruden i Stifinder.
+* OneDrive-filer holdes ikke synkroniseret med skyen.
+* Brugerne kan ikke automatisk uploade billeder og videoer fra mappen Filmrulle.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kan apps og funktioner fungere med OneDrive-fillager.</string>
+
+      <!-- prevent OneDrive sync client (OneDrive.exe) from generating network traffic (checking for updates, etc.) until the user signs in to OneDrive -->
+      <string id="PreventNetworkTrafficPreUserSignIn">Stop OneDrive fra at generere netværkstrafik, indtil brugeren logger på OneDrive</string>
+      <string id="PreventNetworkTrafficPreUserSignIn_help">Aktivér denne indstilling for at stoppe OneDrive-synkroniseringsklienten (OneDrive.exe) fra at generere netværkstrafik (søge efter opdateringer osv.), indtil brugeren logger på OneDrive eller starter synkronisering af filer til den lokale computer.
+
+Hvis du aktiverer denne indstilling, skal brugere logge på OneDrive-synkroniseringsklienten på den lokale computer eller vælge at synkronisere OneDrive- eller SharePoint-filer på computeren, så synkroniseringsklienten starter automatisk.
+
+Hvis denne indstilling ikke er aktiveret, starter OneDrive-synkroniseringsklienten automatisk, når brugere logger på Windows.
+
+Hvis du aktiverer eller deaktiverer denne indstilling, må indstillingen ikke ændres tilbage til Ikke konfigureret. Hvis dette sker, ændres konfigurationen ikke, og den senest konfigurerede indstilling forbliver aktiv.</string>
+
+      <!-- prevent file sync for Blue-->
+      <string id="PreventOneDriveFileSyncForBlue">Undgå brug af OneDrive til fillagring på Windows 8.1</string>
+      <string id="PreventOneDriveFileSyncForBlue_help">Med denne politikindstilling kan du forhindre apps og funktioner i at arbejde med filer på OneDrive til Windows 8.1.
+Hvis du aktiverer denne politikindstilling:
+
+* Brugere kan ikke få adgang til OneDrive fra OneDrive-appen og filvælgeren.
+* Pakkede Microsoft Store-apps kan ikke få adgang til OneDrive ved hjælp af WinRT-API'en.
+* OneDrive vises ikke i navigationsruden i Stifinder.
+* OneDrive-filer holdes ikke synkroniseret med skyen.
+* Brugerne kan ikke automatisk uploade billeder og videoer fra mappen Filmrulle.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kan apps og funktioner fungere med OneDrive-fillager.</string>
+
+      <!-- metered network settings -->
+      <string id="PreventOneDriveFileSyncOnMeteredNetwork">Undgå, at OneDrive-filer synkroniseres via forbrugsbaserede forbindelser</string>
+      <string id="PreventOneDriveFileSyncOnMeteredNetwork_help">Denne politikindstilling tillader konfiguration af OneDrive-filsynkronisering på forbrugsbaserede forbindelser.</string>
+      <string id="OneDriveNeverSyncOnMeteredRoaming">Bloker synkronisering af alle forbrugsbaserede forbindelser</string>
+      <string id="OneDriveSyncOnMeteredNotRoaming">Bloker kun synkronisering på forbrugsbaserede forbindelser ved roaming</string>
+
+      <!-- default save to OneDrive -->
+      <string id="DisableLibrariesDefaultSaveToOneDrive_Title">Gem dokumenter i OneDrive som standard</string>
+      <string id="DisableLibrariesDefaultSaveToOneDrive_Description">Med denne politikindstilling kan du deaktivere OneDrive som standardplacering til lagring. Det forhindrer ikke apps og brugere i at gemme filer på OneDrive. Hvis du deaktiverer denne politikindstilling, gemmes filer som standard lokalt. Brugerne kan stadig ændre værdien af denne indstilling for at gemme på OneDrive som standard. De kan også åbne og gemme filer på OneDrive ved hjælp af OneDrive-appen og filvælgeren, og pakkede Microsoft Store-apps vil stadig kunne få adgang til OneDrive ved hjælp af WinRT-API'en. Hvis du aktiverer eller undlader at konfigurere denne politikindstilling, gemmer brugere med en tilknyttet konto som standard dokumenter på OneDrive.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="PreventOneDriveFileSyncOnMeteredNetwork">
+        <dropdownList refId="OneDriveMeteredNetwork_Dropdown" noSort="true" defaultItem="0">Indstilling for forbrugsbaseret netværk</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

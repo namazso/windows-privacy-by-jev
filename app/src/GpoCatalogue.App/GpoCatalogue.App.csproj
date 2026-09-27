@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>GpoCatalogue</AssemblyName>
+    <RootNamespace>GpoCatalogue.App</RootNamespace>
+    <Product>GPO Catalogue</Product>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
+    <ApplicationUseCompatibleTextRendering>false</ApplicationUseCompatibleTextRendering>
+    <ApplicationDefaultFont>Segoe UI, 9pt</ApplicationDefaultFont>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GpoCatalogue.Core\GpoCatalogue.Core.csproj" />
+  </ItemGroup>
+
+</Project>

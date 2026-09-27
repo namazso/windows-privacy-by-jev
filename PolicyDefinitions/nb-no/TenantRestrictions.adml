@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Policyer for leietakerbegrensning</displayName>
+  <description>Prototyp policyer for leietakerbegrensninger v2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Leietakerbegrensninger</string>
+      <string id="trv2_payload">Detaljer for skypolicy</string>
+      <string id="trv2_payload_EXPLAIN">
+          Denne innstillingen aktiverer og konfigurerer funksjonen for enhetsbaserte leierbegrensninger for Azure Active Directory.
+
+          Når du aktiverer denne innstillingen, nektes programmer som samsvarer med forskriftene, tilgang til leiere som ikke er tillatt, i henhold til en policy som er angitt i Azure AD-leieren.
+
+          Obs! Det er nødvendig å opprette en policy i hjemmeleieren, og det anbefales ytterligere sikkerhetstiltak for administrerte enheter for å få best mulig beskyttelse. Se leierbegrensninger i Azure AD for å få mer informasjon.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Før du aktiverer brannmurbeskyttelse, må du sørge for at en policy for Appkontroll for bedrifter som merker programmer på riktig måte, er brukt på målenhetene. Aktivering av brannmurbeskyttelse uten en tilsvarende policy for Appkontroll for bedrifter hindrer alle programmer fra å nå Microsoft-endepunkter. Denne brannmurinnstillingen støttes ikke i alle versjoner av Windows. Se koblingen nedenfor for å få mer informasjon.
+          Hvis du vil ha mer informasjon om hvordan du konfigurerer WDAC med leierbegrensninger, kan du se https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>Sky-ID (valgfritt):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>Azure AD Directory ID:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>Policy-GUID:</label></textBox>
+        <checkBox refId="EnforceFirewall">Aktiver brannmurbeskyttelse av Microsoft-endepunkter</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Vertsnavn (valgfritt):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Støttede vertsnavn for underdomene (valgfritt):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">IP-områder (valgfritt):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

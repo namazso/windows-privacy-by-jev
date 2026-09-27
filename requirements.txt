@@ -1,0 +1,3 @@
+typesafe-sdk
+httpx
+openpyxl

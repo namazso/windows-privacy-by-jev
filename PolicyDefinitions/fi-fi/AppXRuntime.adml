@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Microsoft. All rights reserved.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Sovelluksen suoritusaika</displayName>
+  <description>Sovelluksen suoritusajan käytännöt</description>
+  <resources>
+    <stringTable>
+      <string id="AppxRuntime">Sovelluksen suoritusaika</string>
+      <string id="AppxRuntime_Help">Sisältää asetukset, joiden avulla voit hallita pakattujen Microsoft Store -sovellusten toimintaa.</string>
+      <string id="AppxRuntimeBlockFileElevation">Estä tiedostoon liittyvien työpöytäsovellusten käynnistäminen.</string>
+      <string id="AppxRuntimeBlockFileElevationExplanation">Tämän käytäntöasetuksen avulla voit määrittää, voivatko paketoidut Microsoft Store -sovellukset avata tiedostoja käyttämällä tiedostotyypin oletustyöpöytäsovellusta. Koska työpöytäsovellukset toimivat korkeammalla eheystasolla kuin paketoidut Microsoft Store -sovellukset, on olemassa riski, että pakattu Microsoft Store -sovellus saattaa vaarantaa järjestelmän avaamalla tiedoston tiedostotyypin oletustyöpöytäsovelluksessa.
+
+Jos otat tämän käytäntöasetuksen käyttöön, pakatut Microsoft Store -sovellukset eivät voi avata tiedostoja tiedostotyypin oletustyöpöytäsovelluksessa; he voivat avata tiedostoja vain muissa paketoiduissa Microsoft Store -sovelluksissa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, paketoidut Microsoft Store -sovellukset voivat avata tiedostoja tiedostotyypin oletustyöpöytäsovelluksessa.</string>
+      <string id="AppxRuntimeBlockProtocolElevation">Estä URI-malliin liittyvien työpöytäsovellusten käynnistäminen</string>
+      <string id="AppxRuntimeBlockProtocolElevationExplanation">Tämän käytäntöasetuksen avulla voit määrittää, voivatko paketoidut Microsoft Store -sovellukset avata URI-tunnuksia URI-mallin oletustyöpöytäsovelluksen avulla. Koska työpöytäsovellukset toimivat korkeammalla eheystasolla kuin paketoidut Microsoft Store -sovellukset, on olemassa riski, että paketoidun Microsoft Store -sovelluksen käynnistämä URI-malli saattaa vaarantaa järjestelmän käynnistämällä työpöytäsovelluksen.
+
+Jos otat tämän käytäntöasetuksen käyttöön, paketoidut Microsoft Store -sovellukset eivät voi avata URI-oletustyöpöytäsovelluksen URI-mallia; he voivat avata URI-tunnuksia vain muissa paketoiduissa Microsoft Store -sovelluksissa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, paketoidut Microsoft Store -sovellukset voivat avata URI-oletustyöpöytäsovelluksessa.
+
+Huomautus: Tämän käytäntöasetuksen ottaminen käyttöön ei estä paketoituja Microsoft Store -sovelluksia avaamasta http-, https- ja mailto-URI-mallien oletustyöpöytäsovellusta. Näiden URI-mallien käsittelijöitä on rajoitus URI-pohjaisia haavoittuvuuksia vastaan, jotka ovat peräisin ei-luotettavilta lähteiltä, mikä vähentää siihen liittyvää riskiä.</string>
+      <string id="AppxRuntimeApplicationContentUriRules">Ota dynaamisen sisällön URI-säännöt käyttöön paketoiduille Microsoft Store -sovelluksille</string>
+      <string id="AppxRuntimeApplicationContentUriRulesExplanation">Tämän käytäntöasetuksen avulla voit ottaa sisällön URI-säännöt käyttöön täydentämään staattisia sisällön URI-sääntöjä, jotka on määritetty osana sovelluksen luetteloa ja joita sovelletaan kaikkiin paketoituihin Microsoft Store -sovelluksiin, jotka käyttävät enterpriseAuthentication-ominaisuutta tietokoneessa.
+
+Jos otat tämän käytäntöasetuksen käyttöön, voit määrittää sisällön URI-lisäsääntöjä, joita kaikki tietokoneen enterpriseAuthentication-ominaisuutta käyttävät pakatut Microsoft Store -sovellukset voivat käyttää.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, paketoidut Microsoft Store -sovellukset käyttävät vain staattisia sisällön URI-sääntöjä.</string>
+      <string id="AppxRuntimeMicrosoftAccountsOptional">Salli Microsoft-tilien olla valinnaisia</string>
+      <string id="AppxRuntimeMicrosoftAccountsOptionalExplanation">Tämän käytäntöasetuksen avulla voit määrittää, ovatko Microsoft-tilit valinnaisia paketoiduille Microsoft Store -sovelluksille, jotka edellyttävät tiliä sisäänkirjautumiseen. Tämä käytäntö vaikuttaa vain sitä tukeviin paketoituihin Microsoft Store -sovelluksiin.
+
+Jos otat tämän käytäntöasetuksen käyttöön, paketoidut Microsoft Store -sovellukset, jotka yleensä edellyttävät Microsoft-tilin sisäänkirjautumiseen, sallivat käyttäjien kirjautua sen sijaan sisään yritystilillä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, käyttäjien on kirjauduttava sisään Microsoft-tilillä.</string>
+      <string id="AppxRuntimeBlockHostedAppAccessWinRT">Estä sellaisten universaalien Windows-sovellusten käynnistäminen, jotka käyttävät Windowsin suorituspalvelun ohjelmointirajapintaa isännöidystä sisällöstä.</string>
+      <string id="AppxRuntimeBlockHostedAppAccessWinRTExplanation">
+        Tämä käytäntöasetus määrittää, voiko sellaisia universaaleja Windows-sovelluksia käynnistää, jotka käyttävät Windowsin suorituspalvelun ohjelmointirajapintaa suoraan verkkosisällöstä.
+
+        Jos otat tämän käytäntöasetuksen käyttöön, universaaleja Windows-sovelluksia, jotka ilmoittavat Windowsin suorituspalvelun ohjelmointirajapinnan käytöstä luettelotiedoston ApplicationContentUriRules-osassa, ei voi käynnistää. Tämä ei vaikuta universaaleihin Windows-sovelluksiin, jotka eivät ilmoita Windowsin suorituspalvelun ohjelmointirajapinnan käytöstä luettelotiedostossa.
+
+        Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, kaikki universaalit Windows-sovellukset voi käynnistää.
+
+        Käytäntöä ei tule ottaa käyttöön, ellei Microsoft suosittele sitä suojaussyistä, koska siitä voi aiheutua vakavia sovellusten yhteensopivuusongelmia.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="AppxRuntimeApplicationContentUriRules">
+        <text>Voit ottaa dynaamisen sisällön URI-säännöt käyttöön valitsemalla Näytä ja kirjoittamalla sitten sisällön URI-säännöt luetteloon.</text>
+        <listBox refId="ListBox_ContentUriRules" required="false">Sisällön URI-säännöt: </listBox>
+        <text>vain https://-URI-osoitteita tuetaan.</text>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Windows Device Guard</displayName>
+  <description>Windows Device Guard biztonsága</description>
+  <resources>
+    <stringTable>
+      <string id="DeviceGuard">Device Guard</string>
+      <string id="VirtualizationBasedSecurity">Virtualizálás-alapú biztonság bekapcsolása</string>
+      <string id="VirtualizationBasedSecurityHelp">
+          Megadja, hogy engedélyezve van-e a virtualizálás alapú biztonság.
+
+          A virtualizálás alapú biztonság a Windows Hypervisort használja a biztonsági szolgáltatások támogatására. A virtualizálás alapú biztonság megköveteli a biztonságos rendszerindítást, és opcionálisan engedélyezhető a DMA-védelem használatával. A DMA-védelem hardveres támogatást igényel, és csak a megfelelően konfigurált eszközökön engedélyezhető.
+
+          Kódintegritás virtualizálás alapú védelme
+
+          Ez a beállítás lehetővé teszi a kernelmódú kódintegritás virtualizáláson alapuló védelmét. Ha ez engedélyezve van, a rendszermag módú memóriavédelem érvényesül, és a Kódintegritás érvényesítési útvonalát a virtualizálás alapú biztonsági funkció védi.
+
+          A „Letiltva” beállítás kikapcsolja a kódintegritás virtualizálás alapú védelmét távolról, ha az előzőleg az „Engedélyezve zárolás nélkül” beállítással lett bekapcsolva.
+
+          Az „Engedélyezve UEFI-zárolással” beállítás biztosítja, hogy a kódintegritás virtualizálás alapú védelme távolról ne legyen kikapcsolható. A funkció letiltásához a csoportházirendet „Letiltva” értékre kell állítani, valamint a biztonsági funkciókat el kell távolítani minden olyan számítógépről, amelyen fizikailag jelen lévő felhasználó van, hogy az UEFI-ben tárolt konfiguráció törlődjön.
+
+          Az „Engedélyezve zárolás nélkül” beállítás lehetővé teszi a kódintegritás virtualizálás alapú védelmének távoli letiltását a csoportházirend használatával.
+
+          A „Nincs konfigurálva” beállítás nem definiálja a házirend-beállítást. A csoportházirend nem írja a házirend-beállítást a beállításjegyzékbe, így az nincs hatással a számítógépekre vagy a felhasználókra. Ha a beállításjegyzékben van egy aktuális beállítás, az nem lesz módosítva.
+
+          Az „UEFI memóriaattribútumtábla megkövetelése” beállítás csak a memóriaattribútumtáblát támogató UEFI belső vezérlőprogrammal rendelkező eszközökön engedélyezi a kódintegritás virtualizáláson alapuló védelmét. Az UEFI memóriaattribútumtábla nélküli eszközök belső vezérlőprogramja nem kompatibilis a virtualizálás alapú kódintegritás-védelemmel, ami bizonyos esetekben összeomlásokhoz vagy adatvesztéshez, illetve bizonyos beépülő modul-kártyákkal való inkompatibilitáshoz vezethet. Ha nem állítja be ezt az opciót, a célzott eszközöket tesztelni kell a kompatibilitás biztosítása érdekében.
+
+          Figyelmeztetés: A rendszer összes illesztőprogramjának kompatibilisnek kell lennie ezzel a funkcióval, különben a rendszer összeomolhat. Gondoskodjon arról, hogy ez a házirend-beállítás csak olyan számítógépeken legyen üzembe helyezve, amelyekről ismert, hogy kompatibilisek.
+
+          Credential Guard
+
+          Ez a beállítás lehetővé teszi a felhasználók számára, hogy bekapcsolják a hitelesítő adatok védelmét segítő, virtualizálás alapú biztonsággal rendelkező Credential Guard funkciót.
+
+          A Windows 11 21H2 és korábbi rendszerek esetében a „Letiltva” beállítás távolról kikapcsolja a Credential Guardot, ha az korábban az „ Engedélyezve zárolás nélkül” opcióval lett bekapcsolva. A későbbi verziók esetében a „Letiltva” opció távolról kikapcsolja a Credential Guardot, ha az korábban az „ Engedélyezve zárolás nélkül” opcióval lett bekapcsolva, vagy „Nincs konfigurálva” értékű volt.
+
+          Az „Engedélyezve UEFI-zárolással” beállítás biztosítja, hogy a Credential Guard nem tiltható le távolról. A funkció letiltásához a csoportházirendet „Letiltva” értékre kell állítani, valamint a biztonsági funkciókat el kell távolítani minden olyan számítógépről, amelyen fizikailag jelen lévő felhasználó van, hogy az UEFI-ben tárolt konfiguráció törlődjön.
+
+          Az „Engedélyezve zárolás nélkül” opció lehetővé teszi a Credential Guard távoli letiltását a csoportházirend használatával. Az ezt a beállítást használó eszközöknek legalább Windows 10 (1511-es verzió) operációs rendszert kell futtatniuk.
+
+          A Windows 11 21H2 és korábbi rendszerek esetében a „Nincs konfigurálva” opció a házirend-beállítást nem definiálja. A csoportházirend nem írja a házirend-beállítást a beállításjegyzékbe, így az nincs hatással a számítógépekre vagy a felhasználókra. Ha a beállításjegyzékben van egy aktuális beállítás, az nem lesz módosítva. Ha a későbbi verziókban nincs aktuális beállítás a beállításjegyzékben, a „Nincs konfigurálva” beállítás engedélyezi a Credential Guardot UEFI-zárolás nélkül.
+
+          Gépidentitás-elkülönítés
+
+          Ez a beállítás szabályozza az Active Directory számítógépfiókok Credential Guard-védelmét. A házirend engedélyezésének bizonyos előfeltételei vannak. Az előfeltételek és a házirenddel kapcsolatos további információk a https://go.microsoft.com/fwlink/?linkid=2251066 webhelyen találhatók.
+
+          A „Nincs konfigurálva” beállítás nem definiálja a házirend-beállítást. A csoportházirend nem írja a házirend-beállítást a beállításjegyzékbe, így az nincs hatással a számítógépekre vagy a felhasználókra. Ha a beállításjegyzékben van egy aktuális beállítás, az nem lesz módosítva.
+
+          A „Letiltva” beállítás kikapcsolja a gépidentitás-elkülönítést. Ha ez a házirend korábban „Engedélyezve naplózási módban” értékre lett állítva, nincs szükség további műveletre. Ha ez a házirend korábban az „Engedélyezve kényszerítési módban” beállításra volt állítva, az eszközt le kell választani és újra csatlakoztatni kell a tartományhoz. További részleteket a fenti hivatkozáson talál.
+
+          Az „Engedélyezve naplózási módban” beállítás átmásolja a számítógép identitását a Credential Guardba. Az LSA és a Credential Guard is hozzáférhet a számítógép identitásához. Ez lehetővé teszi a felhasználók számára annak ellenőrzését, hogy az „Engedélyezve kényszerítési módban” beállítás működik-e az Active Directory tartományukban.
+
+          Az „Engedélyezve kényszerítési módban” beállítás a gépazonosítót a Credential Guard szolgáltatásba helyezi át. Így a számítógép identitása csak a Credential Guard számára lesz elérhető.
+
+          Biztonságos indítás
+
+          Ez a beállítás a biztonságos indítás konfigurációját állítja be a rendszerindítási lánc biztonságossá tételéhez.
+
+          A „Nincs konfigurálva” beállítás az alapértelmezett beállítás, és lehetővé teszi a szolgáltatás rendszergazda felhasználók általi konfigurálását.
+
+          Az „Engedélyezve” beállítás bekapcsolja a biztonságos indítást a támogatott hardvereken.
+
+          A „Letiltva” beállítás a hardvertámogatástól függetlenül kikapcsolja a Biztonságos indítás funkciót.
+
+          Kernel módú hardveres kényszerítésű veremvédelem
+
+          Ez a beállítás engedélyezi a hardveres veremvédelmet a kernel módú kódhoz. Ha ez a biztonsági funkció engedélyezve van, a kernel módú adatvermek hardveralapú árnyékvermekkel vannak megerősítve, amelyek a kívánt visszatérésicím-célokat tárolják annak érdekében, hogy a programvezérlési folyamatot ne lehessen illetéktelenül módosítani.
+
+          Ez a biztonsági funkció a következő előfeltételekkel rendelkezik:
+          1) A CPU hardvere támogatja a hardveralapú árnyékvermeket.
+          2) Engedélyezve van a virtualizálás alapú kódintegritási védelem.
+
+          Ha egyik előfeltétel sem teljesül, akkor ez a funkció nem lesz engedélyezve, még akkor sem, ha az „Engedélyezve” beállítást választotta ki a funkcióhoz. Vegye figyelembe, hogy az „Engedélyezve” opció kiválasztása ennél a funkciónál nem kapcsolja be automatikusan a kódintegritás virtualizálás alapú védelmét, ezt külön kell végrehajtania.
+
+          A biztonsági funkciót engedélyező eszközöknek legalább a Windows 11 (22H2 verzió) operációs rendszert kell futtatniuk.
+
+          A „Letiltva” beállítás kikapcsolja a kernel módú hardveres veremvédelmet.
+
+          Az „Engedélyezve naplózási módban” beállítás lehetővé teszi a kernel módú, hardveresen kényszerített veremvédelmet naplózási módban, ahol az árnyékverem sérülések nem végzetesek, és a rendszer naplózza a rendszer eseménynaplójába.
+
+          Az „Engedélyezve kényszerítési módban” beállítás lehetővé teszi a kernel módú hardveres veremvédelmet kényszerítési módban, ahol az árnyékverem sérülése végzetes.
+
+          A „Nincs konfigurálva” beállítás nem definiálja a házirend-beállítást. A csoportházirend nem írja a házirend-beállítást a beállításjegyzékbe, így az nincs hatással a számítógépekre vagy a felhasználókra. Ha a beállításjegyzékben van egy aktuális beállítás, az nem lesz módosítva.
+
+          Figyelmeztetés: A rendszer összes illesztőprogramjának kompatibilisnek kell lennie ezzel a biztonsági funkcióval, különben a rendszer összeomolhat kényszerítési módban. A naplózási mód a nem kompatibilis illesztőprogramok felderítésére használható. További információ: https://go.microsoft.com/fwlink/?LinkId=2162953.
+      </string>
+      <string id="SecureBoot">Biztonságos rendszerindítás</string>
+      <string id="SecureBootAndDmaProtection">Biztonságos rendszerindítás és DMA-védelem</string>
+      <string id="Disabled">Letiltva</string>
+      <string id="Enabled">Engedélyezve</string>
+      <string id="EnabledWithoutLock">Engedélyezve zárolás nélkül</string>
+      <string id="EnabledWithUefiLock">Engedélyezve UEFI-zárolással</string>
+      <string id="EnabledAudit">Naplózási módban engedélyezve</string>
+      <string id="EnabledEnforcement">Kényszerítési módban engedélyezve</string>
+      <string id="NotConfigured">Nincs konfigurálva</string>
+      <string id="ConfigCIPolicy">Vállalati alkalmazásvezérlés üzembe helyezése</string>
+      <string id="ConfigCIPolicyHelp">Vállalati alkalmazásvezérlés üzembe helyezése
+
+Ezzel a szabályzatbeállítással kódintegritási szabályzatot helyezhet üzembe egy számítógépre annak szabályozásához, hogy mi futtatható az adott gépen.
+
+Ha kódintegritási szabályzatot helyez üzembe, a Windows a szabályzat alapján korlátozza, hogy mi futtatható kernel módban és a Windows asztali verzióján. A szabályzat engedélyezéséhez újra kell indítani a gépet.
+
+A fájl elérési útját vagy UNC elérési útként (például \\KiszolgaloNeve\MegosztasNeve\SIPolicy.p7b), vagy érvényes helyi elérési útként (például C:\MappaNeve\SIPolicy.p7b) kell megadni.  A helyi számítógépfióknak (LOCAL SYSTEM) hozzáférési engedéllyel kell rendelkeznie a szabályzatfájlhoz.
+
+Ha aláírt és védett szabályzatot használ, akkor a szabályzatbeállítás letiltása nem távolítja el a funkciót a számítógépről. Ehelyett a következők egyikét kell tennie:
+
+   1) először frissítse a szabályzatot nem védett szabályzatra, majd tiltsa le a beállítást, vagy
+   2) tiltsa le a beállítást, majd távolítsa el a szabályzatot minden számítógépről fizikailag jelen lévő felhasználóval.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="VirtualizationBasedSecurity">
+        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Platformbiztonsági szint megadása:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Kódintegritás virtualizálás-alapú védelme:</dropdownList>
+        <checkBox refId="CheckboxMAT">UEFI memóriaattribútum-tábla megkövetelése</checkBox>
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">A Credential Guard konfigurálása:</dropdownList>
+        <dropdownList refId="MachineIdentityIsolationDrop" defaultItem="3">Machine Identity Isolation Configuration:</dropdownList>
+        <dropdownList refId="SystemGuardDrop" defaultItem="2">Biztonságos indítás konfigurálása:</dropdownList>
+        <dropdownList refId="KernelShadowStacksDrop" defaultItem="3">Kernel-módú hardveres verem elleni védelem:</dropdownList>
+      </presentation>
+      <presentation id="ConfigCIPolicy">
+        <textBox refId="ConfigCIPolicyFilePathText">
+          <label>Kódintegritási házirend elérési útja:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

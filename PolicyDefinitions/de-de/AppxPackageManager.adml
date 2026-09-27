@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Microsoft. All rights reserved.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <!-- displayName and description are not used. Not supported by current Group Policy tools. -->
+  <displayName>Appx Package Manager</displayName>
+  <description>Appx Package Manager</description>
+  <resources>
+    <stringTable>
+      <string id="AppxDeployment">Bereitstellung von App-Paketen</string>
+      <string id="AppxDeploymentAllowAllTrustedApps">Installation aller vertrauenswürdigen Apps zulassen</string>
+      <string id="AppxDeploymentAllowAllTrustedAppsExplanation">Mit dieser Richtlinieneinstellung können Sie die Installation von vertrauenswürdigen branchenspezifischen (LOB) oder von Entwicklern signierten Microsoft Store-Apps verwalten.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, können Sie jede branchenspezifische oder vom Entwickler signierte Microsoft Store-App installieren (die mit einer Zertifikatkette signiert sein muss, die vom lokalen Computer erfolgreich überprüft werden kann).
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, können Sie LOB- oder vom Entwickler signierte Microsoft Store-Apps nicht installieren.</string>
+      <string id="AllowAutomaticAppArchiving">Archivieren Sie selten verwendete Apps</string>
+      <string id="AllowAutomaticAppArchivingExplanation">Mit dieser Richtlinien Einstellung wird gesteuert, ob das System selten verwendete Apps archivieren kann.
+
+Wenn Sie diese Richtlinien Einstellung aktivieren, überprüft das System Regel mäßig nach selten verwendeten Apps.
+
+Wenn Sie diese Richtlinien Einstellung deaktivieren, werden keine Apps vom System archivieren.
+
+Wenn Sie diese Richtlinien Einstellung nicht konfigurieren (Standard), wird vom System das Standard Verhalten verwendet, in dem es sich um eine Regel mäßige über Prüfung der selten verwendeten Apps handelt, und der Benutzer kann diese Einstellung selbst konfigurieren.</string>
+      <string id="AllowDeploymentInSpecialProfiles">Bereitstellungsvorgänge in speziellen Profilen zulassen</string>
+      <string id="AllowDeploymentInSpecialProfilesExplanation">Mit dieser Richtlinieneinstellung können Sie die Bereitstellung von gepackten Microsoft Store-Anwendungen verwalten, wenn der Benutzer mit einem speziellen Profil angemeldet ist. Spezielle Profile sind die folgenden Benutzerprofile, bei denen die Änderungen nach der Abmeldung des Benutzers verworfen werden:
+
+Roaming-Benutzerprofile, für die die Gruppenrichtlinieneinstellung „Zwischengespeicherte Kopien von Roaming-Profilen löschen“ gilt
+
+ Obligatorische Benutzerprofile und super-obligatorische Profile, die von einem Administrator erstellt werden
+
+ Temporäre Benutzerprofile, die erstellt werden, wenn ein Fehler das Laden des richtigen Profils verhindert
+
+ Benutzerprofile für das Gastkonto und Mitglieder der Gruppe „Gäste“
+
+
+ Wenn Sie diese Richtlinieneinstellung aktivieren, erlaubt die Gruppenrichtlinie Bereitstellungsvorgänge (Hinzufügen, Registrieren, Bereitstellen, Aktualisieren oder Entfernen eines App-Pakets) von gepackten Microsoft Store-Apps, wenn ein spezielles Profil verwendet wird.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, blockiert die Gruppenrichtlinie Bereitstellungsvorgänge für verpackte Microsoft Store-Apps, wenn ein spezielles Profil verwendet wird.</string>
+      <string id="AllowDevelopmentWithoutDevLicense">Ermöglicht die Entwicklung von gepackten Microsoft Store-Apps und deren Installation aus einer integrierten Entwicklungsumgebung (Integrated Development Environment, IDE).</string>
+      <string id="AllowDevelopmentWithoutDevLicenseExplanation">
+        Erlaubt oder verweigert die Entwicklung von Microsoft Store-Anwendungen und deren direkte Installation von einer IDE aus.
+
+        Wenn Sie diese Einstellung und die Gruppenrichtlinie "Installation aller vertrauenswürdigen Apps zulassen" aktivieren, können Sie Microsoft Store-Apps entwickeln und direkt von einer IDE aus installieren.
+
+        Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren, können Sie keine Microsoft Store-Apps entwickeln oder direkt von einer IDE aus installieren.
+      </string>
+      <string id="DisableDeploymentToNonSystemVolumes">Installation von Windows-Apps auf Nicht-Systemvolumes deaktivieren</string>
+      <string id="DisableDeploymentToNonSystemVolumesExplanation">
+        Mit dieser Richtlinieneinstellung können Sie die Installation von Windows-Apps auf zusätzlichen Volumes, wie sekundären Partitionen, USB-Laufwerken oder SD-Karten, verwalten.
+
+        Wenn Sie diese Einstellung aktivieren, können Sie Windows-Apps nicht auf Volumes verschieben oder installieren, die nicht dem Systemvolume entsprechen.
+
+        Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren, können Sie Windows-Apps auf andere Volumes verschieben bzw. darauf installieren.
+      </string>
+      <string id="RestrictAppDataToSystemVolume">Speichern von App-Daten der Benutzer auf Nicht-Systemvolumes verhindern</string>
+      <string id="RestrictAppDataToSystemVolumeExplanation">
+        Verhindert, dass App-Daten der Benutzer an einen anderen Ort verschoben werden, wenn eine App an einen anderen Ort verschoben oder dort installiert wird.
+
+        Wenn Sie diese Einstellung aktivieren, verbleiben die App-Daten aller Benutzer unabhängig vom Installationsort der App auf dem Systemvolume.
+
+        Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren und eine App auf ein anderes Volume verschoben wird, werden die App-Daten der Benutzer ebenfalls auf dieses Volume verschoben.
+      </string>
+      <string id="AllowSharedLocalAppData">Windows-Apps die Freigabe von Anwendungsdaten zwischen Benutzern erlauben</string>
+      <string id="AllowSharedLocalAppDataExplanation">Verwaltet die Fähigkeit einer Windows-App, Daten zwischen Benutzern freizugeben, die die App installiert haben.
+
+        Wenn Sie diese Richtlinie aktivieren, kann eine Windows-App ihre Daten für andere Instanzen der App freigeben. Die Daten werden über den Ordner "SharedLocal" freigegeben, der durch die Windows.Storage-API verfügbar gemacht wird.
+
+        Wenn Sie diese Richtlinie deaktivieren, kann eine Windows-App keine App-Daten für andere Instanzen dieser App freigeben. Falls diese Richtlinie zuvor aktiviert war, verbleiben alle zuvor freigegebenen App-Daten im Ordner "SharedLocal".
+      </string>
+      <string id="BlockNonAdminUserInstall">Verhindern, dass Benutzer ohne Administratorrechte verpackte Windows-Apps installieren</string>
+      <string id="BlockNonAdminUserInstallExplanation">Verwaltet für Benutzer ohne Administratorrechte die Möglichkeit, verpackte Windows-Apps zu installieren.
+
+        Wenn Sie diese Richtlinie aktivieren, können Benutzer ohne Administratorrechte die Installation von Windows-App-Paketen nicht initiieren. Administratoren, die eine App installieren möchten, müssen dies in einem Administratorkontext tun (z. B. in einem PowerShell-Fenster mit Administratorrechten). Alle Benutzer können weiterhin Windows-App-Pakete über den Microsoft Store installieren, sofern dies nach anderen Richtlinien zulässig ist.
+
+        Wenn Sie diese Richtlinie deaktivieren oder nicht konfigurieren, können alle Benutzer Windows-App-Pakete installieren.
+      </string>
+      <string id="DisableBackgroundAutoUpdates">Nicht zulassen, dass quergeladene Apps im Hintergrund automatisch aktualisiert werden</string>
+      <string id="DisableBackgroundAutoUpdatesExplanation">Verwaltet die Möglichkeit einer quergeladenen App, automatisch im Hintergrund zu aktualisieren.
+
+Wenn Sie diese Richtlinie aktivieren, werden quergeladene Apps nicht automatisch im Hintergrund aktualisiert.
+
+Wenn Sie diese Richtlinie deaktivieren, werden quergeladene Apps automatisch im Hintergrund aktualisiert.
+
+Der Standardwert ist "disabled" (Schlüssel nicht vorhanden).
+      </string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdates">Nicht zulassen, dass quergeladene Apps im Hintergrund in einem getakteten Netzwerk automatisch aktualisiert werden</string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdatesExplanation">Verwaltet die Möglichkeit einer quergeladenen App, ein automatisches Update im Hintergrund in einem getakteten Netzwerk auszuführen.
+
+Wenn Sie diese Richtlinie aktivieren, werden quergeladene Apps in einem getakteten Netzwerk nicht automatisch im Hintergrund aktualisiert.
+
+Wenn Sie diese Richtlinie deaktivieren, werden quergeladene Apps automatisch im Hintergrund in einem getakteten Netzwerk aktualisiert.
+
+Der Standardwert ist "disabled" (Schlüssel nicht vorhanden).
+      </string>
+      <string id="DisablePerUserUnsignedPackagesByDefault">Standardmäßige Installation von nicht signierten Paketen pro Benutzer nicht zulassen (erfordert explizites Zulassen pro Installation)</string>
+      <string id="DisablePerUserUnsignedPackagesByDefaultExplanation">Installation nicht signierter Pakete pro Benutzer standardmäßig nicht zulassen (erfordert explizites Zulassen pro Installation)
+
+Wenn Sie diese Richtlinie aktivieren, lautet die Option "AllowUnsigned" standardmäßig "false".
+
+Wenn Sie diese Richtlinie deaktivieren, lautet die Option "AllowUnsigned" standardmäßig "true".
+
+Der Standardwert ist "disabled" (Schlüssel nicht vorhanden).
+      </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

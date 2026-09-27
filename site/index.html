@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windows 11 24H2 Group Policies: privacy, security and baseline catalogue</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="title">
+    <h1>Windows 11 24H2 Group Policies</h1>
+    <p id="meta" class="meta"></p>
+  </div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search name, category, explanation…" aria-label="Search all policies">
+    <label class="ctl">Preset
+      <select id="preset" aria-label="Quick presets">
+        <option value="">none</option>
+        <option value="privacy">Privacy ≥ 50%, UX loss &lt; 50%</option>
+        <option value="privacy_unbaselined">Privacy ≥ 50%, not in RTLFB</option>
+        <option value="security">Security ≥ 50%, UX loss &lt; 50%</option>
+        <option value="rtlfb">In RTLFB</option>
+        <option value="sb">In Security Baseline</option>
+        <option value="both">In both baselines</option>
+      </select>
+    </label>
+    <label class="ctl">Rows
+      <select id="pageSize" aria-label="Rows per page">
+        <option value="50">50</option>
+        <option value="100" selected>100</option>
+        <option value="250">250</option>
+        <option value="1000">1000</option>
+        <option value="0">All</option>
+      </select>
+    </label>
+    <details class="cols" id="colsMenu">
+      <summary>Columns</summary>
+      <div id="colsList" class="cols-list"></div>
+    </details>
+    <button id="export" type="button">Export CSV</button>
+    <button id="reset" type="button">Reset</button>
+  </div>
+</header>
+
+<p id="count" class="count" aria-live="polite"></p>
+<nav class="pager" id="pagerTop" aria-label="Pagination (top)"></nav>
+
+<div class="table-wrap">
+  <table id="grid">
+    <thead>
+      <tr id="headRow"></tr>
+      <tr id="filterRow" class="filters"></tr>
+    </thead>
+    <tbody id="body"></tbody>
+  </table>
+</div>
+
+<nav class="pager" id="pagerBottom" aria-label="Pagination (bottom)"></nav>
+
+<footer class="legend">
+  <h2>How to read the columns</h2>
+  <p>Every row is an Administrative Template policy from the Windows 11 24H2 policy definitions, plus the
+  templates shipped with the two Microsoft baselines. The three percentage columns are the probability
+  the model assigned to a yes answer; they are independent judgements, not a ranking.</p>
+  <ul>
+    <li><strong>Privacy</strong>: configuring the policy (Enabled or Disabled, with data-minimising
+      options) would reduce collection, transmission or exposure of user and device data compared with
+      leaving it Not Configured.</li>
+    <li><strong>Security</strong>: configuring the policy would make the device harder to attack,
+      compromise or misuse.</li>
+    <li><strong>UX loss</strong>: configuring the policy in its most restrictive direction would directly
+      degrade the experience of ordinary users (lost features, blocked actions, extra prompts, slower
+      performance). Less telemetry, fewer ads or tips, and less personalisation do not count.</li>
+    <li><strong>Privacy: set to / Security: set to</strong>: the state the model considers most
+      privacy-protective or most secure. Shown as “—” when the model chose neither or the matching
+      probability is below 50%; the underlying choice is in the row details.</li>
+    <li><strong>RTLFB / Security Baseline</strong>: what Microsoft's Restricted Traffic Limited
+      Functionality Baseline and Windows 11 24H2 Security Baseline set the policy to, decoded from the
+      baseline registry.pol files. Only Administrative Template settings are shown.</li>
+  </ul>
+  <p>Bands: <span class="pct pct-low">below 35%</span> <span class="pct pct-mid">35 to 65%</span>
+  <span class="pct pct-high">above 65%</span>. Click a column header to sort; use the second header row to
+  filter. Filters and sorting are kept in the page address so a view can be bookmarked.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

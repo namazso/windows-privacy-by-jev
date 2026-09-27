@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigename hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="Cat_LanmanWorkstation">LanMan-Arbeitsstation</string>
+      <string id="Pol_CipherSuiteOrder_Name">Reihenfolge der Verschlüsselungssammlungen</string>
+      <string id="Pol_CipherSuiteOrder_Help">Diese Richtlinieneinstellung legt die vom SMB-Client verwendeten Verschlüsselungssammlungen fest.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, werden die Verschlüsselungssammlungen in der angegebenen Reihenfolge priorisiert.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren und nicht mindestens eine unterstützte Verschlüsselungssammlung angeben, oder wenn Sie die Richtlinieneinstellung deaktivieren oder nicht konfigurieren, wird die Standardreihenfolge der Verschlüsselungssammlungen verwendet.
+
+Verschlüsselungssammlungen von SMB 3.11:
+
+AES_128_GCM
+AES_128_CCM
+AES_256_GCM
+AES_256_CCM
+
+Verschlüsselungssammlungen von SMB 3.0 und 3.02:
+
+AES_128_CCM
+
+Ändern der Einstellung:
+
+Ordnen Sie die gewünschten Verschlüsselungssammlungen im Bearbeitungsfeld zeilenweise von der am meisten bis zu der am wenigsten bevorzugten Sammlung an. Die am meisten bevorzugte Verschlüsselungssammlung steht ganz oben. Entfernen Sie alle nicht verwendeten Verschlüsselungssammlungen.
+
+Hinweis: Wenn Sie diese Sicherheitseinstellung konfigurieren, werden die Änderungen erst beim Neustart von Windows wirksam.</string>
+      <string id="Pol_EnableInsecureGuestLogons_Name">Unsichere Gastanmeldungen aktivieren</string>
+      <string id="Pol_EnableInsecureGuestLogons_Help">Diese Richtlinieneinstellung bestimmt, ob der SMB-Client unsichere Gastanmeldungen bei einem SMB-Server zulässt.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren oder nicht konfigurieren, lässt der SMB-Client unsichere Gastanmeldungen zu.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren, lehnt der SMB-Client unsichere Gastanmeldungen ab.
+
+Wenn Sie die Signierung aktivieren, lehnt der SMB-Client unsichere Gastanmeldungen ab.
+
+Unsichere Gastanmeldungen werden von Dateiservern verwendet, um nicht authentifizierten Zugriff auf freigegebene Ordner zu ermöglichen. In einer Unternehmensumgebung sind unsichere Gastanmeldungen zwar ungewöhnlich, werden aber häufig von NAS-Geräten (Network Attached Storage) verwendet, die als Dateiserver fungieren. Windows-Dateiserver erfordern eine Authentifizierung und verwenden standardmäßig keine unsicheren Gastanmeldungen. Da unsichere Gastanmeldungen nicht authentifiziert sind, werden wichtige Sicherheitsfeatures wie SMB-Signatur und SMB-Verschlüsselung deaktiviert. Daher sind Clients, die unsichere Gastanmeldungen zulassen, anfällig für eine Vielzahl von Man-in-the-Middle-Angriffen, die zu Datenverlust, Datenbeschädigung und Anfälligkeit gegenüber Schadsoftware führen können. Darüber hinaus sind alle Daten, die mithilfe einer unsicheren Gastanmeldung auf einen Dateiserver geschrieben werden, potenziell für jeden im Netzwerk zugänglich. Microsoft empfiehlt, unsichere Gastanmeldungen zu deaktivieren und Dateiserver so zu konfigurieren, dass ein authentifizierter Zugriff erforderlich ist.“
+      </string>
+
+      <string id="Pol_EnableCSCforCAShares_Name">Verfügbarkeit von Offlinedateien auf CA (Continuous Availability)-Freigaben</string>
+      <string id="Pol_EnableCSCforCAShares_Help">
+        Diese Richtlinieneinstellung bestimmt das Verhalten von Offlinedateien für Clients, die eine Verbindung mit einer SMB-Freigabe herstellen, für die das CA (Continuous Availability)-Kennzeichen aktiviert ist.
+
+        Wenn Sie die Richtlinieneinstellung aktivieren, wird die Option "Immer offline verfügbar" im Datei-Explorer-Menü eines Windows-Computers angezeigt, wenn eine Verbindung mit einer CA-fähigen Freigabe hergestellt wird. Zudem können Dateien mithilfe des clientseitigen Cachings an CA-fähige Freigaben angeheftet werden.
+
+        Wenn Sie die Richtlinieneinstellung deaktivieren oder nicht konfigurieren, verhindert Windows die Verwendung von Offlinedateien mit CA-fähigen Freigaben.
+
+        Hinweis: Microsoft rät davon ab, diese Gruppenrichtlinie zu aktivieren. Die Verwendung von CA mit Offlinedateien führt zu langen Übergangszeiten zwischen Online- und Offlinezustand.
+      </string>
+
+      <string id="Pol_EnableHandleCachingForCAFiles_Name">Caching von Handles auf CA (Continuous Availability)-Freigaben</string>
+      <string id="Pol_EnableHandleCachingForCAFiles_Help">
+        Diese Richtlinieneinstellung bestimmt das Verhalten beim Caching von SMB-Handles für Clients, die eine Verbindung mit einer SMB-Freigabe herstellen, für die das CA (Continuous Availability)-Kennzeichen aktiviert ist.
+
+        Wenn Sie diese Richtlinieneinstellung aktivieren, lässt der SMB-Client zwischengespeicherte Handles zu Dateien auf CA-Freigaben zu. Dies kann die Leistung verbessern, wenn wiederholt auf eine große Anzahl unstrukturierter Datendateien auf CA-Freigaben zugegriffen wird, die in Microsoft Azure Files ausgeführt werden.
+
+        Wenn Sie die Richtlinieneinstellung deaktivieren oder nicht konfigurieren, verhindert Windows die Verwendung zwischengespeicherter Handles zu Dateien, die über CA-Freigaben geöffnet werden.
+
+        Hinweis: Diese Richtlinie hat keine Auswirkung, wenn eine Verbindung mit Freigaben des Dateiservers mit horizontaler Skalierung hergestellt wird, die von einem Windows Server bereitgestellt werden. Microsoft rät davon ab, diese Richtlinie für Clients zu aktivieren, die regelmäßig eine Verbindung mit Dateien herstellen, die auf einem Windows-Failovercluster mit der Rolle "Dateiserver zur allgemeinen Verwendung" gehostet sind, da dies zu ungünstigen Failoverzeiten sowie höherer Speicher- und CPU-Auslastung führen kann.
+      </string>
+      <string id="SUPPORTED_Windows_Server_2022_Windows_11_0">Mindestens Windows Server 2022, Windows 11</string>
+      <string id="SUPPORTED_Windows_Server_2025_Windows_11_0">Mindestens Windows Server 2025, Windows 11</string>
+      <string id="Pol_EnableCompressedTraffic_Name">Standardmäßig SMB-Komprimierung verwenden</string>
+      <string id="Pol_EnableCompressedTraffic_Help">Diese Richtlinie steuert, ob der SMB Client standardmäßig die Datenverkehrskomprimierung verwendet.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, versucht der SMB Client, den Datenverkehr standardmäßig zu komprimieren, wenn die SMB Komprimierung aktiviert ist.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, versucht der SMB Client standardmäßig nicht, den Datenverkehr zu komprimieren. Die Verkehrskomprimierung kann jedoch auch auf andere Weise angefordert werden. Siehe Anmerkungen unten.
+
+Hinweis: Diese Richtlinie wird mit Handle Eigenschaften pro Freigabe und pro Datei kombiniert, über die eine Datenverkehrskomprimierung angefordert werden kann. Außerdem muss der SMB Server die Komprimierung unterstützen und aktivieren. Sollte diese Richtlinie beispielsweise deaktiviert (oder nicht konfiguriert) sein, kann der SMB Client weiterhin eine Komprimierung durchführen, wenn eine SMB Serverfreigabe eine Komprimierung angefordert hat. Wenn dies unerwünscht ist und Sie die Komprimierung vollständig deaktivieren möchten, konfigurieren Sie stattdessen die begleitende Richtlinie SMB-Komprimierung deaktivieren.
+      </string>
+      <string id="Pol_DisableCompression_Name">Deaktivieren der SMB-Komprimierung</string>
+      <string id="Pol_DisableCompression_Help">Diese Richtlinie steuert, ob der SMB Client die Verkehrskomprimierung deaktiviert (vollständig verhindert).
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, komprimiert der SMB Client niemals Daten, unabhängig von anderen Richtlinien (z. B. der Richtlinie SMB Komprimierung standardmäßig verwenden oder der Eigenschaft pro Freigabe).
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, kann der SMB Client den Datenverkehr komprimieren (abhängig von einer Kombination anderer Richtlinien und Bedingungen).
+      </string>
+      <string id="Pol_MaxSmb2Dialect_Name">Maximale Version von SMB vorgeben</string>
+      <string id="Pol_MaxSmb2Dialect_Help">Diese Richtlinie steuert die maximale Version des SMB-Protokolls.
+
+Hinweis: Diese Gruppenrichtlinie verhindert nicht die Verwendung von SMB 1, wenn diese Komponente noch installiert und aktiviert ist.
+      </string>
+      <string id="Pol_MinSmb2Dialect_Name">Mindestversion von SMB vorgeben</string>
+      <string id="Pol_MinSmb2Dialect_Help">Diese Richtlinie steuert die Mindestversion des SMB-Protokolls.
+
+Hinweis: Diese Gruppenrichtlinie verhindert nicht die Verwendung von SMB 1, wenn diese Komponente noch installiert und aktiviert ist.
+      </string>
+      <string id="Dialect_0x202">SMB 2.0.2</string>
+      <string id="Dialect_0x210">SMB 2.1.0</string>
+      <string id="Dialect_0x300">SMB 3.0.0</string>
+      <string id="Dialect_0x302">SMB 3.0.2</string>
+      <string id="Dialect_0x311">SMB 3.1.1</string>
+      <string id="Pol_BlockNTLM_Name">NTLM blockieren (LM, NTLM, NTLMv2)</string>
+      <string id="Pol_BlockNTLM_Help">Diese Richtlinie steuert, ob NTLM für die Authentifizierung von Remoteverbindungen vom SMB-Client blockiert wird.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, verwendet der SMB-Client NTLM nicht für die Authentifizierung von Remoteverbindungen.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, kann der SMB-Client WEITERHIN NTLM verwenden.
+      </string>
+      <string id="Pol_BlockNTLMServerExceptionList_Name">NTLM-Serverausnahmeliste blockieren</string>
+      <string id="Pol_BlockNTLMServerExceptionList_Help">Diese Richtlinieneinstellung bestimmt, ob NTLM für den Zugriff auf angegebene Server verwendet werden kann.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren (nur verfügbar, wenn die Richtlinie NTLM (LM, NTLM, NTLMv2) blockieren aktiviert ist), kann NTLM für den Zugriff auf die angegebenen Server verwendet werden. Geben Sie die gewünschten Server (DNS-Name, IP-Adresse oder NetBIOS-Name) in das Bearbeitungsfeld ein, einen Servernamen pro Zeile.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, wird der NTLM-Zugriff auf Server durch andere Einstellungen bestimmt.
+      </string>
+      <string id="Pol_EnableRemoteMailslots_Name">Remote-Mailslots aktivieren</string>
+      <string id="Pol_EnableRemoteMailslots_Help">Diese Richtlinie steuert, ob der SMB-Client Remote-Mailslots über MUP aktiviert oder deaktiviert.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren, funktionieren Remote-Mailslots nicht über MUP, daher werden sie nicht über den SMB-Client-Redirector geleitet.
+
+Wenn Sie diese Richtlinieneinstellung nicht konfigurieren, können Remote-Mailslots über MUP zugelassen werden.
+      </string>
+      <string id="Pol_RequireEncryption_Name">Verschlüsselung erforderlich</string>
+      <string id="Pol_RequireEncryption_Help">Diese Richtlinie steuert, ob der SMB-Client eine Verschlüsselung erfordert.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, fordert der SMB-Client an, dass der SMB-Server die Verschlüsselung unterstützt und die Daten verschlüsselt.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, erfordert der SMB-Client keine Verschlüsselung. Möglicherweise ist jedoch noch eine SMB-Verschlüsselung erforderlich. siehe Unten stehende Notizen.
+
+Hinweis: Diese Richtlinie wird mit den Verbindungseigenschaften pro Freigabe, pro Server und pro zugeordnetem Laufwerk kombiniert, über die möglicherweise eine SMB-Verschlüsselung erforderlich ist. Der SMB-Server muss die SMB-Verschlüsselung unterstützen und aktivieren. Wenn diese Richtlinie beispielsweise deaktiviert (oder nicht konfiguriert) werden soll, kann der SMB-Client die Verschlüsselung dennoch ausführen, wenn eine SMB-Serverfreigabe die erforderliche Verschlüsselung aufweist.
+
+Wichtig: Für die SMB-Verschlüsselung ist SMB 3.0 oder höher erforderlich.
+      </string>
+      <string id="Pol_EnableAlternativePorts_Name">Alternative Ports aktivieren</string>
+      <string id="Pol_EnableAlternativePorts_Help">Diese Richtlinie steuert, ob der SMB-Client alternative Ports aktiviert oder deaktiviert.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren, werden vom SMB-Client keine alternativen Ports verwendet.
+
+Wenn Sie diese Richtlinieneinstellung nicht konfigurieren, können alternative Ports vom SMB-Client verwendet werden.
+      </string>
+      <string id="Pol_AuditServerDoesNotSupportEncryption_Name">Der Überwachungsserver unterstützt keine Verschlüsselung.</string>
+      <string id="Pol_AuditServerDoesNotSupportEncryption_Help">Diese Richtlinie steuert, ob der SMB-Client das Überwachungsereignis aktiviert, wenn der SMB-Server keine Verschlüsselung unterstützt.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, protokolliert der SMB-Client das Ereignis, wenn der SMB-Server keine Verschlüsselung unterstützt.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, protokolliert der SMB-Client das Ereignis nicht.
+      </string>
+      <string id="Pol_AuditServerDoesNotSupportSigning_Name">Der Überwachungsserver unterstützt keine Signierung.</string>
+      <string id="Pol_AuditServerDoesNotSupportSigning_Help">Diese Richtlinie steuert, ob der SMB-Client das Überwachungsereignis aktiviert, wenn der SMB-Server die Signierung nicht unterstützt.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, protokolliert der SMB-Client das Ereignis, wenn der SMB-Server die Signierung nicht unterstützt.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, protokolliert der SMB-Client das Ereignis nicht.
+      </string>
+      <string id="Pol_AuditInsecureGuestLogon_Name">Unsichere Gastanmeldung überwachen</string>
+      <string id="Pol_AuditInsecureGuestLogon_Help">Diese Richtlinie steuert, ob der SMB-Client das Überwachungsereignis aktiviert, wenn der Client als Gastkonto angemeldet ist.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, protokolliert der SMB-Client das Ereignis, wenn der Client als Gastkonto angemeldet ist.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, protokolliert der SMB-Client das Ereignis nicht.
+      </string>
+      <string id="Pol_AlternativePortMappings_Name">Alternative Portzuordnungen</string>
+      <string id="Pol_AlternativePortMappings_Help">Diese Richtlinieneinstellung bestimmt die alternativen Portregistrierungszuordnungen, die vom SMB-Client verwendet werden.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, wird die erste gültige Zuordnung verwendet, wenn der Servername der Zuordnung mit dem Zielservernamen für die Konnektivität übereinstimmt.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren und nicht mindestens eine gültige Zuordnung angeben oder wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, verweist der SMB-Client auf andere Methoden zur Bestimmung der alternativen Portverwendung, z. B. mit den Befehlen NET USE oder New-SmbMapping.
+
+Beispiele:
+
+contososa.file.core.windows.net:tcp:448
+edgesrv1.corp.contoso.com:quic:450
+
+So ändern Sie diese Einstellung:
+
+Ordnen Sie die gewünschten alternativen Portzuordnungen im Bearbeitungsfeld mit einem Zuordnungseintrag pro Zeile an.
+
+Das Format jedes Zuordnungseintrags gibt einen Servernamen, Transporttyp und eine Portnummer an, getrennt durch Doppelpunkte wie im obigen Beispiel.
+
+Hinweis: Diese Richtlinie erfordert keinen Neustart von Windows, damit sie wirksam wird.
+      </string>
+      <string id="Pol_EnableSMBQUIC_Name">Enable SMB over QUIC</string>
+      <string id="Pol_EnableSMBQUIC_Help">This policy setting controls whether the SMB client will enable SMB over QUIC.
+
+If you disable this policy setting, the SMB client will not allow initiating connections over QUIC. In this case, if the user attempts to connect over QUIC, SMB client will attempt to connect over TCP.
+
+If you do not configure this policy setting, the SMB client may allow initiating connections over QUIC.
+    </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Pol_CipherSuiteOrder">
+        <text>Verschlüsselungssammlungen:</text>
+        <multiTextBox refId="MultiText_CipherSuiteOrder"/>
+      </presentation>
+      <presentation id="Pol_MaxSmb2Dialect">
+        <text>SMB-Version auswählen:</text>
+        <dropdownList refId="MaxSmb2Dialect" defaultItem="0">Version:</dropdownList>
+      </presentation>
+      <presentation id="Pol_MinSmb2Dialect">
+        <text>SMB-Version auswählen:</text>
+        <dropdownList refId="MinSmb2Dialect" defaultItem="0">Version:</dropdownList>
+      </presentation>
+      <presentation id="Pol_BlockNTLMServerExceptionList">
+        <text>NTLM-Serverausnahmeliste blockieren.</text>
+        <multiTextBox refId="MultiText_BlockNTLMServerExceptionList"/>
+      </presentation>
+      <presentation id="Pol_AlternativePortMappings">
+        <text>Alternative Portregistrierungszuordnungen:</text>
+        <multiTextBox refId="MultiText_AlternativePortMappings"/>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

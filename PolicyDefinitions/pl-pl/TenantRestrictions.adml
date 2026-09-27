@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Zasady ograniczeń dzierżawy</displayName>
+  <description>Zasady prototypów dla ograniczeń dzierżawy wersja 2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Ograniczenia dzierżawy</string>
+      <string id="trv2_payload">Szczegóły zasad usługi w chmurze</string>
+      <string id="trv2_payload_EXPLAIN">
+          To ustawienie włącza i konfiguruje funkcję ograniczeń dzierżawy opartej na urządzeniach dla usługi Azure Active Directory.
+
+          Po włączeniu tego ustawienia zgodne aplikacje nie będą mogły uzyskiwać dostępu do niedozwolonych dzierżaw zgodnie z zasadami ustawionymi w dzierżawie usługi Azure AD.
+
+          Uwaga: utworzenie zasad w dzierżawie głównej jest wymagane, a w celu uzyskania najlepszej ochrony zalecane są dodatkowe środki bezpieczeństwa dla urządzeń zarządzanych. Aby uzyskać więcej szczegółowych informacji, zapoznaj się z ograniczeniami dzierżawy w usłudze Azure AD.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Przed włączeniem ochrony zapory upewnij się, że na urządzeniach docelowych zostały zastosowane zasady kontroli aplikacji dla firm, które poprawnie tagują aplikacje. Włączenie ochrony zapory bez odpowiednich zasad kontroli aplikacji dla firm uniemożliwi wszystkim aplikacjom dostęp do punktów końcowych firmy Microsoft. To ustawienie zapory nie jest obsługiwane we wszystkich wersjach systemu Windows — zobacz poniższy link, aby uzyskać więcej informacji.
+          Aby uzyskać szczegółowe informacje na temat konfigurowania funkcji WDAC z ograniczeniami dzierżawy, zobacz stronę https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>Identyfikator chmury (opcjonalnie):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>Identyfikator katalogu usługi Microsoft Azure AD:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>Identyfikator GUID zasad:</label></textBox>
+        <checkBox refId="EnforceFirewall">Włącz ochronę zaporą punktów końcowych firmy Microsoft</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Nazwy hostów (opcjonalne):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Nazwy hostów obsługujących poddomeny (opcjonalne):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">Zakresy adresów IP (opcjonalne):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

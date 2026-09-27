@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Criteri restrizione tenant</displayName>
+  <description>Criteri prototipo per le restrizioni del tenant V2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Restrizioni tenant</string>
+      <string id="trv2_payload">Dettagli criteri cloud</string>
+      <string id="trv2_payload_EXPLAIN">
+          Questa impostazione abilita e configura la funzionalità di restrizioni del tenant basata sul dispositivo per Azure Active Directory.
+
+          Quando si abilita questa impostazione, alle applicazioni conformi verrà impedito di accedere ai tenant non consentiti, in base a un criterio impostato nel tenant Azure AD.
+
+          Nota: è necessaria la creazione di un criterio nel tenant principale e sono consigliate misure di sicurezza aggiuntive per i dispositivi gestiti per una protezione ottimale. Per altre informazioni, vedere restrizioni del tenant Azure AD.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Prima di abilitare la protezione del firewall, assicurarsi che ai dispositivi di destinazione sia stato applicato un criterio di controllo delle app per le aziende che contrassegna correttamente le applicazioni. L'abilitazione della protezione firewall senza un criterio di controllo delle app per le aziende corrispondente impedirà a tutte le applicazioni di raggiungere gli endpoint Microsoft. Questa impostazione del firewall non è supportata in tutte le versioni di Windows. Per altre informazioni, vedere il collegamento seguente.
+          Per informazioni dettagliate sulla configurazione di WDAC con restrizioni del tenant, vedere https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>ID cloud (facoltativo):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>ID directory Azure AD:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>GUID criterio:</label></textBox>
+        <checkBox refId="EnforceFirewall">Abilita la protezione del firewall degli endpoint Microsoft</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Nomi host (facoltativo):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Sottodominio nomi host supportati (facoltativo):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">Intervalli IP (facoltativo):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

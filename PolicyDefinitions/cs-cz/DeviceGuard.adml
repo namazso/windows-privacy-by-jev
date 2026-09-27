@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName> Microsoft Windows Device Guard </displayName>
+  <description>Zabezpečení funkcí Windows Device Guard</description>
+  <resources>
+    <stringTable>
+      <string id="DeviceGuard">Device Guard</string>
+      <string id="VirtualizationBasedSecurity">Zapnout zabezpečení na základě virtualizace</string>
+      <string id="VirtualizationBasedSecurityHelp">
+          Určuje, jestli je povolené zabezpečení založené na virtualizaci.
+
+          Zabezpečení založené na virtualizaci využívá k poskytování podpory bezpečnostních služeb Windows Hypervisor. Zabezpečení založené na virtualizaci vyžaduje zabezpečené spouštění a dá se povolit s pomocí ochrany DMA. Ochrany DMA vyžadují hardwarovou podporu a můžou se povolit jen na správně nastavených zařízených.
+
+          Ochrana integrity kódu na základě virtualizace souborů a registru
+
+          Toto nastavení povolí ochranu integrity kódu režimu jádra na základě virtualizace. Když je tato ochrana povolena, vynutí se ochrany paměti režimu jádra a ověřovací cesta integrity kódu bude chráněná funkcí ochrany na základě virtualizace.
+
+          Možnost Zakázáno vzdáleně vypne ochranu integrity kódu na základě virtualizace, pokud byla zapnutá pomocí možnosti Povoleno bez zámku.
+
+          Díky možnosti Povoleno se zámkem UEFI není možné vzdáleně zakázat ochranu integrity kódu na základě virtualizace. Abyste tuto funkci zakázali, nastavte zásady skupiny na Zakázáno a odstraňte funkci zabezpečení ze všech počítačů s fyzicky přítomným uživatelem, aby bylo možné zrušit trvalou konfiguraci rozhraní UEFI.
+
+          Možnost Povoleno bez zámku umožňuje vzdáleně zakázat ochranu integrity kódu na základě virtualizace s použitím zásad skupiny.
+
+          Možnost Nenakonfigurováno nechá nastavení zásad nedefinované. Zásady skupiny nezapisují nastavení zásad do registru, takže nemají žádný vliv na počítače ani uživatele. Pokud je v registru aktuální nastavení, nebude změněno.
+
+          Možnost Vyžadovat tabulku atributů paměti rozhraní UEFI povolí ochranu integrity kódu na základě virtualizace jen na zařízeních s podporou firmwaru s rozhraním UEFI pro tabulku atributů paměti. Zařízení bez tabulky atributů paměti rozhraní UEFI můžou mít firmware, který není kompatibilní s ochranou integrity kódu na základě virtualizace, což může v některých případech vést k chybám, ztrátě dat nebo nekompatibilitě s určitými kartami modulů plug-in. Pokud tuto možnost nenastavíte, cílená zařízení by se měla otestovat, aby se zajistila jejich kompatibilita.
+
+          Upozornění: Všechny ovladače v systému musí být s touto funkcí kompatibilní, jinak se systém může chybově ukončit. Ujistěte se, že se toto nastavení zásad nasazuje jen na kompatibilní počítače.
+
+          Credential Guard
+
+          Toto nastavení umožňuje uživatelům zapnout Credential Guard se zabezpečením založeném na virtualizaci, čímž ochrání své přihlašovací údaje.
+
+          Možnost Zakázáno ve Windows 11 21H2 a starších verzích vzdáleně vypne Credential Guard, pokud byl zapnut pomocí možnosti Povoleno bez zámku. Možnost Zakázáno v novějších verzích vzdáleně vypne Credential Guard, pokud byl zapnut pomocí možnosti Povoleno bez zámku nebo nebyl nakonfigurován.
+
+          Díky možnosti Povoleno se zámkem rozhraní UEFI není možné vzdáleně zakázat Credential Guard. Abyste tuto funkci zakázali, nastavte zásady skupiny na Zakázáno a odstraňte funkci zabezpečení ze všech počítačů s fyzicky přítomným uživatelem, aby bylo možné zrušit trvalou konfiguraci rozhraní UEFI.
+
+          Možnost Povoleno bez zámku umožňuje vzdáleně zakázat Credential Guard s použitím zásad skupiny. Zařízení s tímto nastavením musí mít minimálně Windows 10 (Verze 1511).
+
+          Ve Windows 11 21H2 a starších verzích nechá možnost Nenakonfigurováno nastavení zásad nedefinované. Zásady skupiny nezapisují nastavení zásad do registru, takže nemají žádný vliv na počítače ani uživatele. Pokud je v registru aktuální nastavení, nebude změněno. Pokud u novějších verzí není aktuální nastavení, možnost Nenakonfigurováno povolí Credential Guard bez zámku rozhraní UEFI.
+
+          Izolace identity počítače
+
+          Toto nastavení řídí ochranu Credential Guard u účtů počítačů se službou Active Directory. Povolení této zásady má určité předpoklady. Potřebné předpoklady a další informace o této zásadě najdete na adrese https://go.microsoft.com/fwlink/?linkid=2251066.
+
+          Možnost Nenakonfigurováno nechá nastavení zásad nedefinované. Zásady skupiny nezapisují nastavení zásad do registru, takže nemají žádný vliv na počítače ani uživatele. Pokud je v registru aktuální nastavení, nebude změněno.
+
+          Možnost Zakázáno vypne izolaci identity počítače. Pokud se tyto zásady dříve nastavily na Povoleno v režimu auditování, není nutná žádná další akce. Pokud se tyto zásady dříve nastavily na Povoleno v režimu vynucení, zařízení se musí odpojit a znovu připojit k doméně. Další podrobnosti najdete na odkaze výše.
+
+          Možnost Povoleno v režimu auditování zkopíruje identitu počítače do ochrany Credential Guard. Místní úřad zabezpečení (LSA) i ochrana Credential Guard budou mít přístup k identitě počítače. To umožní uživatelům ověřit, jestli možnost Povoleno v režimu vynucení bude fungovat v jejich doméně služby Active Directory.
+
+          Možnost Povoleno v režimu vynucení přesune identitu počítače do ochrany Credential Guard. Díky tomu bude identita počítače přístupná pouze pro Credential Guard.
+
+          Zabezpečené spouštění
+
+          Toto nastavení nastavuje konfiguraci zabezpečeného spouštění pro zabezpečení spouštěcího řetězce.
+
+          Možnost Nekonfigurováno je nastavena jako výchozí a umožňuje konfiguraci funkce uživateli, kteří jsou správci.
+
+          Možnost Povoleno zapne funkci zabezpečeného spouštění na podporovaném hardwaru.
+
+          Možnost Zakázáno vypne funkci zabezpečeného spouštění bez ohledu na podporu hardwaru.
+
+          Hardwarem podporovaná ochrana zásobníku v režimu jádra
+
+          Toto nastavení povolí hardwarem podporovanou ochranu zásobníku u kódu v režimu jádra. Když je tato funkce zabezpečení povolena, zásobníky dat v režimu jádra se posílí hardwarovými stínovými zásobníky, které ukládají zamýšlené cíle zpátečních adres, aby se nenarušil tok řízení programu.
+
+          Tato funkce zabezpečení má následující požadavky:
+          1) Hardware CPU musí podporovat hardwarové stínové zásobníky.
+          2) Ochrana integrity kódu na základě virtualizace je povolená.
+
+          Funkce se nepovolí, pokud není splněný některý z těchto požadavků, a to ani v případě, že je funkce povolená. Možnost Povoleno u této funkce automaticky nepovolí ochranu integrity kódu na základě virtualizace. Ta se musí povolit samostatně.
+
+          Zařízení, která povolí tuto funkci zabezpečení, musí mít minimálně Windows 11 (Verze 22H2).
+
+          Možnost Zakázáno vypne hardwarem podporovanou ochranu zásobníku v režimu jádra.
+
+          Možnost Povoleno v režimu auditování povolí hardwarem podporovanou ochranu zásobníku v režimu auditování, kde porušení stínových zásobníků nebude závažné a zaznamená se v protokolu systémových událostí.
+
+          Možnost Povoleno v režimu vynucení povolí hardwarem podporovanou ochranu zásobníku v režimu vynucení, kde bude porušení stínových zásobníků závažné.
+
+          Možnost Nenakonfigurováno nechá nastavení zásad nedefinované. Zásady skupiny nezapisují nastavení zásad do registru, takže nemají žádný vliv na počítače ani uživatele. Pokud je v registru aktuální nastavení, nebude změněno.
+
+          Upozornění: Všechny ovladače v systému musí být s touto funkcí zabezpečení kompatibilní, jinak se může systém v režimu vynucení chybově ukončit. Režim auditování lze použít ke zjišťování nekompatibilních ovladačů. Další informace najdete na https://go.microsoft.com/fwlink/?LinkId=2162953.
+      </string>
+      <string id="SecureBoot">Zabezpečené spouštění</string>
+      <string id="SecureBootAndDmaProtection">Zabezpečené spouštění a ochrana DMA</string>
+      <string id="Disabled">Zakázáno</string>
+      <string id="Enabled">Povoleno</string>
+      <string id="EnabledWithoutLock">Povoleno bez zámku</string>
+      <string id="EnabledWithUefiLock">Povoleno se zámkem UEFI</string>
+      <string id="EnabledAudit">Povoleno v režimu auditování</string>
+      <string id="EnabledEnforcement">Povoleno v režimu vynucení</string>
+      <string id="NotConfigured">Není nakonfigurováno</string>
+      <string id="ConfigCIPolicy">Nasazení Řízení aplikací pro podniky</string>
+      <string id="ConfigCIPolicyHelp">Nasadit Řízení aplikací pro firmy
+
+Toto nastavení zásad umožňuje nasadit zásady integrity kódu do počítače, aby bylo možné řídit, co je na tomto počítači povoleno spouštět.
+
+Pokud nasadíte zásady integrity kódu, systém Windows na základě těchto zásad omezí spouštění v režimu jádra i na ploše systému Windows. Pokud chcete tuto zásadu povolit, musí se počítač restartovat.
+
+Cesta k souboru musí být buď cesta UNC (například \\NázevServeru\NázevSdílenéSložky\SIPolicy.p7b), nebo místně platná cesta (například C:\NázevSložky\SIPolicy.p7b).  Účet místního počítače (LOCAL SYSTEM) musí mít přístupová oprávnění k souboru zásad.
+
+Pokud používáte podepsané a chráněné zásady, pak zakázáním tohoto nastavení zásad neodeberete tuto funkci z počítače. Místo toho musíte:
+
+1) nejprve aktualizujte zásady na nechráněné zásady a pak toto nastavení zakažte, nebo
+   2) zakažte nastavení a pak odeberte zásady z každého počítače s fyzicky přítomným uživatelem.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="VirtualizationBasedSecurity">
+        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Vyberte úroveň zabezpečení platformy:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Ochrana integrity kódu na základě virtualizace:</dropdownList>
+        <checkBox refId="CheckboxMAT">Vyžadovat tabulku atributů paměti UEFI</checkBox>
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Konfigurace funkce Credential Guard:</dropdownList>
+        <dropdownList refId="MachineIdentityIsolationDrop" defaultItem="3">Machine Identity Isolation Configuration:</dropdownList>
+        <dropdownList refId="SystemGuardDrop" defaultItem="2">Konfigurace zabezpečeného spouštění:</dropdownList>
+        <dropdownList refId="KernelShadowStacksDrop" defaultItem="3">Hardwarem vynucená ochrana zásobníku (chráněný režim):</dropdownList>
+      </presentation>
+      <presentation id="ConfigCIPolicy">
+        <textBox refId="ConfigCIPolicyFilePathText">
+          <label>Cesta k souboru zásad integrity kódu:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Zásady omezení tenanta</displayName>
+  <description>Zásady prototypu pro omezení tenanta v2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Omezení tenanta</string>
+      <string id="trv2_payload">Podrobnosti o zásadách v cloudu</string>
+      <string id="trv2_payload_EXPLAIN">
+          Toto nastavení povolí a nakonfiguruje funkci omezení tenanta na základě zařízení pro Azure Active Directory.
+
+          Když toto nastavení povolíte, aplikacím dodržujícím předpisy se zabrání v přístupu k nepovoleným tenantům podle zásad nastavených ve vašem tenantovi Azure AD.
+
+          Poznámka: Vytvoření zásady v domovském tenantovi je povinné a pro zajištění nejlepší ochrany se doporučují další bezpečnostní opatření pro spravovaná zařízení. Další podrobnosti najdete v omezeních tenantů Azure AD.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Před povolením ochrany bránou firewall se ujistěte, že se na cílová zařízení použily zásady Řízení aplikací pro podniky, které správně označují aplikace. Povolením ochrany bránou firewall bez odpovídajících zásad Řízení aplikací pro podniky zabráníte všem aplikacím v kontaktování koncových bodů Microsoftu. Toto nastavení brány firewall není podporováno ve všech verzích systému Windows. Další informace naleznete na následujícím odkazu.
+          Podrobnosti o nastavení nástroje WDAC s omezeními tenanta najdete na adrese https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>ID cloudu (nepovinné):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>Azure AD Directory ID:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>Identifikátor GUID pro zásady:</label></textBox>
+        <checkBox refId="EnforceFirewall">Povolit ochranu koncových bodů Microsoft firewallem</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Názvy hostitelů (volitelné):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Názvy hostitelů podporovaných subdomén (volitelné):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">Rozsahy IP adres (volitelné):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

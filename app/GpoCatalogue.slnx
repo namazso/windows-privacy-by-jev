@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GpoCatalogue.App/GpoCatalogue.App.csproj" />
+    <Project Path="src/GpoCatalogue.Core/GpoCatalogue.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GpoCatalogue.Tests/GpoCatalogue.Tests.csproj" />
+    <Project Path="tests/GpoCatalogue.UiTests/GpoCatalogue.UiTests.csproj">
+      <Platform Project="x64" />
+    </Project>
+  </Folder>
+</Solution>

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Pipeline intermediates (rebuilt by `build.py parse baselines`)
+/build/*
+# The model cache is kept: it holds paid / rate-limited API answers and cannot be rebuilt cheaply.
+!/build/model_cache.jsonl
+
+# Node (tools/)
+node_modules/
+npm-debug.log*
+
+# .NET
+bin/
+obj/
+TestResults/
+/app/publish/
+*.user
+*.suo
+*.rsuser
+.vs/
+*.binlog
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs and secrets
+*.log
+.env

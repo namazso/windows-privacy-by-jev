@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>SAM-beállítások</displayName>
+  <description>A biztonsági fiókkezelő konfigurációs beállításai</description>
+  <resources>
+    <stringTable>
+      <string id="SAM">SAM</string>
+      <string id="SecurityAccountManager">Biztonsági fiókkezelő (SAM)</string>
+      <string id="SamNGCKeyROCAValidation">A ROCA-veszélyeztetett WHfB-kulcsok érvényesítésének konfigurálása hitelesítés közben</string>
+      <string id="SamNGCKeyROCAValidationNone">ROCA-veszélyeztetett WHfB-kulcsok figyelmen kívül hagyása</string>
+      <string id="SamNGCKeyROCAValidationAudit">Használatban lévő ROCA-veszélyeztetett WHfB-kulcsok vizsgálata</string>
+      <string id="SamNGCKeyROCAValidationBlock">Használatban lévő ROCA-veszélyeztetett WHfB-kulcsok letiltása</string>
+      <string id="SamNGCKeyROCAValidation_explain">Ez a házirend-beállítás lehetővé teszi annak beállítását, hogy a tartományvezérlők miként kezeljék a Windows Hello vállalati verzió (WHfB) kulcsokat, amelyek a "Coppersmith elvű támadások" (ROCA) veszélyének vannak kitéve.
+
+A ROCA biztonsági résről további információt az alábbi témakörökben talál:
+
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15361
+
+https://en.wikipedia.org/wiki/ROCA_vulnerability
+
+Ha engedélyezi ezt a házirend-beállítást, a következő lehetőségek támogatottak:
+
+Figyelmen kívül hagyás: hitelesítéskor a tartományvezérlő nem fogja felismerni a ROCA veszélyének kitett WHfB-kulcsokat.
+
+Ellenőrzés: a hitelesítés során a tartományvezérlő a WHfB-kulcsokra vonatkozó eseménynaplókat bocsát ki, amelyek a ROCA biztonsági réssel függnek össze (a hitelesítések továbbra is sikerrel járhatnak).
+
+Letiltás: a hitelesítés során a tartományvezérlő letiltja a ROCA-veszélyeztetettséggel (a hitelesítő hibák esetén) rendelkező WHfB-kulcsok használatát.
+
+Ez a beállítás csak a tartományvezérlőkön érvényesül.
+
+Ha nincs konfigurálva, a tartományvezérlők alapértelmezés szerint a helyi konfigurációt használják. Az alapértelmezett helyi konfiguráció a naplózás.
+
+A beállítás érvénybe léptetéséhez nem szükséges újraindítás.
+
+Megjegyzés: a váratlan zavarok elkerülése érdekében ezt a beállítást ne állítsa letiltásra, amíg a megfelelő kockázatcsökkentő műveleteket nem végezték el, például a veszélyeztetett TPM-ek javítását.
+
+További információ a https://go.microsoft.com/fwlink/?linkid=2116430 címen található.
+</string>
+      <string id="SamrChangeUserPasswordApiPolicy">A SAM jelszómódosítás RPC-módszerekre vonatkozó szabályzatának konfigurálása</string>
+      <string id="SamrChangeUserPasswordApiPolicyBlockAll">Az összes jelszómódosítási RPC-módszer letiltása</string>
+      <string id="SamrChangeUserPasswordApiPolicyAllowSecure">Erős titkosítású jelszómódosítás engedélyezése csak RPC-módszer esetén</string>
+      <string id="SamrChangeUserPasswordApiPolicyAllowAll">Az összes jelszómódosítási RPC-módszer engedélyezése</string>
+      <string id="SamrChangeUserPasswordApiPolicyExplain">Ez a házirend lehetővé teszi, hogy a rendszergazda konfigurálja a felhasználói jelszót módosító RPC-módszerek távoli használatát a biztonsági fiókkezelőben (SAM).
+
+Engedélyezett szabályzat esetén a következő lehetőségek támogatottak:
+
+Az összes jelszómódosító RPC-módszer letiltása: letiltja az összes biztonsági fiókkezelő (SAM) jelszómódosító RPC-módszerek távoli használatát.
+
+Erős titkosítással rendelkező jelszómódosító RPC módszer engedélyezése: engedélyezi az erős titkosítást használó jelszómódosító RPC-módszer távoli használatát, és blokkolja a gyenge titkosítási módszerek távoli használatát.
+
+Az összes jelszómódosító RPC-módszer engedélyezése: lehetővé teszi az összes jelszómódosító RPC-módszer távoli használatát, titkosítástól függetlenül.
+
+Alapértelmezett házirend: 1. Tartományi tagszámítógépek – az összes jelszómódosító RPC-módszer blokkolása.
+                2. Tartományvezérlők – erős titkosítással rendelkező jelszómódosító RPC-módszer engedélyezése.
+
+Megjegyzés: Letiltott vagy nem konfigurált házirend esetén a gép az alapértelmezett házirendet fogja használni.
+</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="SamNGCKeyROCAValidation">
+        <dropdownList refId="SamNGCKeyROCAValidation_Settings" noSort="true" defaultItem="2">ROCA-sérülékeny WHfB-kulcsok kezelésének lehetőségei:</dropdownList>
+      </presentation>
+      <presentation id="SamrChangeUserPasswordApiPolicy">
+        <dropdownList refId="SamrChangeUserPasswordApiPolicySettings" noSort="true" defaultItem="1">Sam jelszómódosítás RPC-módszerre vonatkozó szabályzatának beállításai:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

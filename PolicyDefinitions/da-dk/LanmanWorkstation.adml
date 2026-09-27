@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>indtast det viste navn her</displayName>
+  <description>indtast beskrivelsen her</description>
+  <resources>
+    <stringTable>
+      <string id="Cat_LanmanWorkstation">Lanman-arbejdsstation</string>
+      <string id="Pol_CipherSuiteOrder_Name">Rækkefølge af krypteringsprogrammer</string>
+      <string id="Pol_CipherSuiteOrder_Help">Denne politikindstilling bestemmer de krypteringsprogrammer, der bruges af SMB-klienten.
+
+Hvis du aktiverer denne politikindstilling, prioriteres krypteringsprogrammerne i den angivne rækkefølge.
+
+Hvis du aktiverer denne politikindstilling og ikke angiver mindst ét krypteringsprogram, der er understøttet, eller hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, bruges standardrækkefølgen for krypteringsprogrammer.
+
+SMB 3.11-krypteringsprogrammer:
+
+AES_128_GCM
+AES_128_CCM
+AES_256_GCM
+AES_256_CCM
+
+SMB 3.0 and 3.02-krypteringsprogrammer:
+
+AES_128_CCM
+
+Sådan ændres denne indstilling:
+
+Arranger de ønskede krypteringsprogrammer i redigeringsfeltet, ét krypteringsprogram pr. linje, i en rækkefølge fra mest foretrukken til mindst foretrukken, og hvor det mest foretrukne krypteringsprogram er øverst. Fjern de krypteringsprogrammer, du ikke vil bruge.
+
+Bemærk! Når du konfigurerer denne sikkerhedsindstilling, vil ændringerne ikke træde i kraft, før du genstarter Windows.</string>
+      <string id="Pol_EnableInsecureGuestLogons_Name">Giv mulighed for usikre gæstelogon</string>
+      <string id="Pol_EnableInsecureGuestLogons_Help">Denne politikindstilling bestemmer, om SMB-klienten tillader usikre gæstelogon på en SMB-server.
+
+Hvis du aktiverer denne politikindstilling, eller hvis du ikke konfigurerer denne politikindstilling, tillader SMB-klienten usikre gæstelogon.
+
+Hvis du deaktiverer denne politikindstilling, afviser SMB-klienten usikre gæstelogon
+
+Hvis du aktiverer signering, vil SMB-klienten afvise usikre gæstelogon.
+
+Filservere bruger usikre gæstelogon til ikkegodkendt adgang til delte mapper. Hvor dette er usædvanligt i et virksomhedsmiljø, bruges usikre gæstelogon ofte til anvendelse af NAS-netværk (Network Attached Storage) til privat brug som f.eks. filserver. Windows-filservere kræver godkendelse og bruger ikke usikker gæstelogon som standard. Da usikre gæstelogon ikke er godkendte, er vigtige sikkerhedsfunktioner som SMB-signering og SMB-kryptering deaktiveret. Klienter, der tillader usikker gæstelogon, er derfor sårbare over for en række man-in-the-middle-angreb, der kan resultere i datatab, ødelagte data og risiko for malware. Desuden er de data, der er skrevet til en filserver ved hjælp af et usikkert gæstelogon, potentielt set tilgængelig for alle på netværket. Microsoft anbefaler deaktivering af usikre gæstelogon, og at filservere konfigureres, så der kræves godkendt adgang.
+      </string>
+
+      <string id="Pol_EnableCSCforCAShares_Name">Tilgængeligheden af offlinefiler på shares med konstant tilgængelighed</string>
+      <string id="Pol_EnableCSCforCAShares_Help">
+        Denne politikindstilling bestemmer funktionen af offlinefiler på klienter, der opretter forbindelse til et SMB-share, hvor flaget Konstant tilgængelighed (CA) er aktiveret.
+
+        Hvis du aktiverer denne politikindstilling, vises indstillingen "Altid tilgængelig offline" i menuen i Stifinder på en Windows-computer, når der oprettes forbindelse til et CA-aktiveret share. Fastgørelse af filer på CA-aktiverede shares ved hjælp af cachelagring på klientsiden vil også være mulig.
+
+        Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, forhindrer Windows brugen af offlinefiler sammen med CA-aktiverede shares.
+
+        Bemærk! Microsoft anbefaler ikke, at du aktiverer denne gruppepolitik. Brug af CA sammen med offlinefiler fører til meget lange overførselstider mellem online- og offlinetilstandene.
+      </string>
+
+      <string id="Pol_EnableHandleCachingForCAFiles_Name">Håndtering af cachelagring på shares med konstant tilgængelighed</string>
+      <string id="Pol_EnableHandleCachingForCAFiles_Help">
+        Denne politikindstilling bestemmer funktionen af cachelagring af SMB-handle for klienter, der opretter forbindelse til et SMB-share, hvor flaget for konstant tilgængelighed (CA) er aktiveret.
+
+        Hvis du aktiverer denne politikindstilling, tillader SMB-klienten cachelagrede handles til filer på CA-shares. Dette kan resultere i bedre ydeevne, når du gentagne gange åbner et stort antal ustrukturerede datafiler på CA-shares, der kører i Microsoft Azure-filer.
+
+        Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, vil Windows forhindre brug af cachelagrede handles til filer, der åbnes via CA-shares.
+
+        Bemærk! Denne politik har ingen effekt, når der tilsluttes filservershares til udskalering, der leveres af en Windows Server. Microsoft anbefaler ikke aktivering af denne politik til klienter, der jævnligt opretter forbindelse til filer, der hostes på en Windows-failoverklynge, hvor filserveren har rollen Generel brug, da det kan medføre uønskede failover-tider og øget belastning af hukommelse og CPU.
+      </string>
+      <string id="SUPPORTED_Windows_Server_2022_Windows_11_0">Mindst Windows Server 2022 eller Windows 11</string>
+      <string id="SUPPORTED_Windows_Server_2025_Windows_11_0">Mindst Windows Server 2025 eller, Windows 11</string>
+      <string id="Pol_EnableCompressedTraffic_Name">Brug SMB-komprimering som standard</string>
+      <string id="Pol_EnableCompressedTraffic_Help">Denne politik styrer, om SMB-klienten som standard bruger trafikkomprimering.
+
+Hvis du aktiverer denne politikindstilling, forsøger SMB-klienten som standard at komprimere trafik, når SMB-komprimering er aktiveret.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, vil SMB-klienten som standard ikke forsøge at komprimere trafik. Der kan dog anmodes om trafikkomprimering på en anden måde. Se noterne nedenfor.
+
+Bemærk! Denne politik kombineres med egenskaber pr. share og håndtag pr. fil, som der kan anmodes om trafikkomprimering gennem. SMB-serveren skal også understøtte og aktivere komprimering. Hvis denne politik f.eks. deaktiveres (eller ikke konfigureres), kan SMB-klienten stadig udføre komprimering, hvis der er anmodet om komprimering på et SMB-servershare. Hvis dette er uønsket, og du ønsker at deaktivere komprimering helt, skal du i stedet konfigurere den tilhørende politik "Deaktiver SMB-komprimering".
+      </string>
+      <string id="Pol_DisableCompression_Name">Deaktiver SMB-komprimering</string>
+      <string id="Pol_DisableCompression_Help">Denne politik styrer, om SMB-klienten deaktiverer (forhindrer fuldstændig) trafikkomprimering.
+
+Hvis du aktiverer denne politikindstilling, komprimerer SMB-klienten aldrig data, uanset andre politikker (f.eks. politikken "Brug SMB-komprimering som standard" eller egenskab pr. share).
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kan SMB-klienten komprimere trafik (afhængigt af en kombination af andre politikker og betingelser).
+      </string>
+      <string id="Pol_MaxSmb2Dialect_Name">Gør den maksimale version af SMB obligatorisk</string>
+      <string id="Pol_MaxSmb2Dialect_Help">Denne politik styrer den maksimale version af SMB-protokollen
+
+Bemærk! Denne gruppepolitik forhindrer ikke brug af SMB 1, hvis komponenten stadig er installeret og aktiveret.
+      </string>
+      <string id="Pol_MinSmb2Dialect_Name">Gør den minimale version af SMB obligatorisk</string>
+      <string id="Pol_MinSmb2Dialect_Help">Denne politik styrer minimumversionen af SMB-protokollen
+
+Bemærk! Denne gruppepolitik forhindrer ikke brug af SMB 1, hvis komponenten stadig er installeret og aktiveret.
+      </string>
+      <string id="Dialect_0x202">SMB 2.0.2</string>
+      <string id="Dialect_0x210">SMB 2.1.0</string>
+      <string id="Dialect_0x300">SMB 3.0.0</string>
+      <string id="Dialect_0x302">SMB 3.0.2</string>
+      <string id="Dialect_0x311">SMB 3.1.1</string>
+      <string id="Pol_BlockNTLM_Name">Block NTLM (LM, NTLM, NTLMv2)</string>
+      <string id="Pol_BlockNTLM_Help">Denne politik styrer, om SMB-klienten blokerer NTLM for godkendelse af fjernforbindelse.
+
+Hvis du aktiverer denne politikindstilling, bruger SMB-klienten ikke NTLM til godkendelse af fjernforbindelse.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kan SMB-klienten stadig bruge NTLM.
+      </string>
+      <string id="Pol_BlockNTLMServerExceptionList_Name">Bloker undtagelsesliste for NTLM-server</string>
+      <string id="Pol_BlockNTLMServerExceptionList_Help">Denne politikindstilling bestemmer, om NTLM kan bruges til at få adgang til de angivne servere.
+
+Hvis du aktiverer denne politikindstilling (kun gyldig, hvis politikken Bloker NTLM (LM, NTLM, NTLMv2) er aktiveret), kan NTLM bruges til at få adgang til de angivne servere. Angiv de ønskede servere (DNS-navn, IP-adresse eller NetBIOS-navn) i redigeringsfeltet, ét servernavn pr. linje.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, bestemmes NTLM-adgangen til servere af andre indstillinger.
+      </string>
+      <string id="Pol_EnableRemoteMailslots_Name">Aktivér port til post</string>
+      <string id="Pol_EnableRemoteMailslots_Help">Denne politik styrer, om SMB-klienten aktiverer eller deaktiverer eksterne mailslots via MUP.
+
+Hvis du deaktiverer denne politikindstilling, fungerer eksterne mailslots ikke via MUP, og derfor går de ikke gennem SMB-klientomdirigeringen.
+
+Hvis du ikke konfigurerer denne politikindstilling, kan eksterne mailslots tillades via MUP.
+      </string>
+      <string id="Pol_RequireEncryption_Name">Kræv kryptering</string>
+      <string id="Pol_RequireEncryption_Help">Denne politik styrer, om SMB-klienten kræver kryptering.
+
+Hvis du aktiverer denne politikindstilling, kræver SMB-klienten, at SMB-serveren understøtter kryptering og kryptering af dataene.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kræver SMB-klienten ikke kryptering. SMB-kryptering kan dog stadig være påkrævet. se noterne nedenfor.
+
+Note: Denne politik kombineres med egenskaber pr. deling, pr. server og pr. tilknyttet drevforbindelse, hvor der kan være behov for SMB-kryptering. SMB-serveren skal understøtte og aktivere SMB-kryptering. Hvis denne politik f.eks. deaktiveres (eller ikke er konfigureret), udfører SMB-klienten muligvis stadig kryptering, hvis et SMB-serverdeling har krævet kryptering.
+
+Vigtigt: SMB-kryptering kræver SMB 3.0 eller nyere
+      </string>
+      <string id="Pol_EnableAlternativePorts_Name">Aktivér alternative porte</string>
+      <string id="Pol_EnableAlternativePorts_Help">Denne politik styrer, om SMB-klienten aktiverer eller deaktiverer alternative porte.
+
+Hvis du deaktiverer denne politikindstilling, bruges alternative porte ikke af SMB-klienten.
+
+Hvis du ikke konfigurerer denne politikindstilling, bruges alternative porte muligvis af SMB-klienten.
+      </string>
+      <string id="Pol_AuditServerDoesNotSupportEncryption_Name">Overvågningsserver understøtter ikke kryptering</string>
+      <string id="Pol_AuditServerDoesNotSupportEncryption_Help">Denne politik styrer, om SMB-klienten aktiverer overvågningshændelsen, når SMB-serveren ikke understøtter kryptering.
+
+Hvis du aktiverer denne politikindstilling, logføres hændelsen af SMB-klienten, når SMB-serveren ikke understøtter kryptering.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, logføres hændelsen ikke af SMB-klienten.
+      </string>
+      <string id="Pol_AuditServerDoesNotSupportSigning_Name">Overvågningsserver understøtter ikke signering</string>
+      <string id="Pol_AuditServerDoesNotSupportSigning_Help">Denne politik styrer, om SMB-klienten aktiverer overvågningshændelsen, når SMB-serveren ikke understøtter signering.
+
+Hvis du aktiverer denne politikindstilling, vil SMB-klienten logføre hændelsen, når SMB-serveren ikke understøtter signering.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, vil SMB-klienten ikke logføre hændelsen.
+      </string>
+      <string id="Pol_AuditInsecureGuestLogon_Name">Overvåg usikre gæstelogon</string>
+      <string id="Pol_AuditInsecureGuestLogon_Help">Denne politik styrer, om SMB-klienten aktiverer overvågningshændelsen, når klienten er logget på som gæstekonto.
+
+Hvis du aktiverer denne politikindstilling, logføres hændelsen af SMB-klienten, når klienten logges på som gæstekonto.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, logføres hændelsen ikke af SMB-klienten.
+      </string>
+      <string id="Pol_AlternativePortMappings_Name">Tilknytninger af alternativ port</string>
+      <string id="Pol_AlternativePortMappings_Help">Denne politikindstilling bestemmer de alternative porttilknytninger i registreringsdatabasen, der bruges af SMB-klienten.
+
+Hvis du aktiverer denne politikindstilling, bruges den første gyldige tilknytning, hvis tilknytningens servernavn svarer til destinationsservernavnet for forbindelsen.
+
+Hvis du aktiverer denne politikindstilling og ikke angiver mindst én gyldig tilknytning, eller hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, vil SMB-klienten referere til andre metoder til bestemmelse af alternativ portanvendelse, f.eks. med NET USE eller New-SmbMapping-kommandoer.
+
+Eksempler:
+
+contososa.file.core.windows.net:tcp:448
+edgesrv1.corp.contoso.com:quic:450
+
+Sådan ændres denne indstilling:
+
+Arranger de ønskede alternative porttilknytninger i redigeringsboksen med én tilknytningspost pr. linje.
+
+Formatet for hver tilknytningspost angiver et servernavn, en transporttype og et portnummer adskilt af koloner, som det er gjort i eksemplet ovenfor.
+
+Bemærk! Denne politik kræver ikke genstart af Windows for at træde i kraft.
+      </string>
+      <string id="Pol_EnableSMBQUIC_Name">Enable SMB over QUIC</string>
+      <string id="Pol_EnableSMBQUIC_Help">This policy setting controls whether the SMB client will enable SMB over QUIC.
+
+If you disable this policy setting, the SMB client will not allow initiating connections over QUIC. In this case, if the user attempts to connect over QUIC, SMB client will attempt to connect over TCP.
+
+If you do not configure this policy setting, the SMB client may allow initiating connections over QUIC.
+    </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Pol_CipherSuiteOrder">
+        <text>Krypteringsprogrammer:</text>
+        <multiTextBox refId="MultiText_CipherSuiteOrder"/>
+      </presentation>
+      <presentation id="Pol_MaxSmb2Dialect">
+        <text>Vælg SMB-version:</text>
+        <dropdownList refId="MaxSmb2Dialect" defaultItem="0">Version:</dropdownList>
+      </presentation>
+      <presentation id="Pol_MinSmb2Dialect">
+        <text>Vælg SMB-version:</text>
+        <dropdownList refId="MinSmb2Dialect" defaultItem="0">Version:</dropdownList>
+      </presentation>
+      <presentation id="Pol_BlockNTLMServerExceptionList">
+        <text>Bloker undtagelsesliste for NTLM-server:</text>
+        <multiTextBox refId="MultiText_BlockNTLMServerExceptionList"/>
+      </presentation>
+      <presentation id="Pol_AlternativePortMappings">
+        <text>Tilknytninger af alternativ port i registreringsdatabase:</text>
+        <multiTextBox refId="MultiText_AlternativePortMappings"/>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

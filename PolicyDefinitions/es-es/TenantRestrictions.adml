@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>Directivas de restricción de espacio empresarial</displayName>
+  <description>Directivas prototipo para restricciones de espacio empresarial V2</description>
+  <resources>
+    <stringTable>
+      <string id="TenantRestrictions">Restricciones de espacios empresariales</string>
+      <string id="trv2_payload">Detalles de directivas en la nube</string>
+      <string id="trv2_payload_EXPLAIN">
+          Esta configuración habilita y configura la característica de restricciones de inquilinos basadas en dispositivos para Azure Active Directory.
+
+          Cuando habilita esta configuración, se impedirá que las aplicaciones compatibles accedan a inquilinos no permitidos, de acuerdo con una directiva establecida en su inquilino de Azure AD.
+
+          Nota: Se requiere la creación de una directiva en el inquilino de su hogar y se recomiendan medidas de seguridad adicionales para los dispositivos administrados para una mejor protección. Consulte restricciones de inquilino de Azure AD para obtener más detalles.
+
+          https://go.microsoft.com/fwlink/?linkid=2148762
+
+          Antes de habilitar la protección mediante firewall, asegúrese de que se haya aplicado a los dispositivos de destino una directiva de Control de aplicaciones para empresas que etiquete correctamente las aplicaciones. Habilitar la protección de firewall sin una directiva de Control de aplicaciones para empresas correspondiente evitará que todas las aplicaciones lleguen a los puntos finales de Microsoft. Esta configuración de firewall no se admite en todas las versiones de Windows. Consulte el vínculo siguiente para obtener más información.
+          Para obtener detalles sobre cómo configurar WDAC con restricciones de inquilinos, consulte https://go.microsoft.com/fwlink/?linkid=2155230</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="trv2_payload">
+        <textBox refId="PayloadCloudId"><label>ID de la nube (opcional):</label></textBox>
+        <textBox refId="PayloadTenantId"><label>ID de Azure AD:</label></textBox>
+        <textBox refId="PayloadPolicyId"><label>Directiva de GUID:</label></textBox>
+        <checkBox refId="EnforceFirewall">Habilitar la protección de Firewall de los extremos de Microsoft</checkBox>
+        <multiTextBox refId="PayloadHostnamesId">Nombres de host (opcional):</multiTextBox>
+        <multiTextBox refId="PayloadSubdomainSupportedHostnamesId">Nombres de host de subdominio admitidos (opcional):</multiTextBox>
+        <multiTextBox refId="PayloadIpRangesId">Intervalos IP (opcional):</multiTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Microsoft. All rights reserved.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <!-- displayName and description are not used. Not supported by current Group Policy tools. -->
+  <displayName>Appx-paketinhallinta</displayName>
+  <description>Appx-paketinhallinta</description>
+  <resources>
+    <stringTable>
+      <string id="AppxDeployment">Sovelluspaketin hallinta</string>
+      <string id="AppxDeploymentAllowAllTrustedApps">Salli kaikkien luotettujen sovellusten asennus</string>
+      <string id="AppxDeploymentAllowAllTrustedAppsExplanation">Tämän käytäntöasetuksen avulla voit hallita luotettujen toimialakohtaisten (LOB) tai kehittäjän allekirjoittamien, paketoitujen sovellusten asentamista Microsoft Storen kautta.
+
+Jos otat tämän käytäntöasetuksen käyttöön, voit asentaa luotettuja toimialakohtaisia tai kehittäjän allekirjoittamia, paketoituja sovelluksia Microsoft Storen kautta (paikallisen tietokoneen on pystyttävä vahvistamaan tällaisten sovellusten varmenneketjun allekirjoitus).
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, et voi asentaa toimialakohtaisia tai kehittäjän allekirjoittamia, paketoituja sovelluksia Microsoft Storesta.</string>
+      <string id="AllowAutomaticAppArchiving">Arkistoi harvoin käytetyt sovellukset</string>
+      <string id="AllowAutomaticAppArchivingExplanation">Tämä käytäntö asetus määrittää, voiko järjestelmä arkistoida harvoin käytössä olevia sovelluksia.
+
+Jos otat tämän käytäntö asetuksen käyttöön, järjestelmä tarkistaa ja Arkistoi harvoin käytetyt sovellukset säännöllisesti.
+
+Jos poistat tämän käytäntö asetuksen käytöstä, järjestelmä ei arkistoi mitään sovelluksia.
+
+Jos et määritä tätä käytäntö asetusta (oletus), järjestelmä seuraa oletus toimintaa, joka on säännöllisesti tarkistaa ja Arkistoi harvoin sovelluksia, ja käyttäjä voi määrittää tämän asetuksen itse.</string>
+      <string id="AllowDeploymentInSpecialProfiles">Salli erityisprofiilien käyttöönottotoiminnot</string>
+      <string id="AllowDeploymentInSpecialProfilesExplanation">Tämän käytäntöasetuksen avulla voit hallita Microsoft Storen sovellusten käyttöönottoa, kun käyttäjä on kirjautunut käyttämään erityisprofiilia. Erityisprofiileja ovat seuraavat käyttäjäprofiilit, joissa tehdyt muutokset hylätään käyttäjän uloskirjautumisen jälkeen:
+
+Palvelimessa sijaitsevat käyttäjäprofiilit, joita varten käytetään Poista välimuistiin tallennetut kopiot palvelimessa sijaitsevista profiileista -ryhmäkäytäntöasetusta
+
+Järjestelmänvalvojan luomat pakolliset käyttäjäprofiilit ja super-mandatory (erittäin pakolliset) -käyttäjäprofiilit
+
+Tilapäiset käyttäjäprofiilit, jollainen luodaan silloin, kun virhe estää oikean profiilin lataamisen
+
+Käyttäjäprofiilit vierastiliä ja vierasryhmän jäseniä varten
+
+
+Jos otat tämän käytäntöasetuksen käyttöön, ryhmäkäytäntö sallii Microsoft Storen sovellusten käyttöönottotoiminnot (sovelluspakettien lisäämisen, rekisteröimisen, valmistelemisen, päivittämisen tai poistamisen), kun käyttäjän käytössä on erityisprofiili.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, ryhmäkäytäntö estää Microsoft Storen sovellusten käyttöönottotoiminnot, kun käyttäjän käytössä on erityisprofiili.</string>
+      <string id="AllowDevelopmentWithoutDevLicense">Sallii paketoitujen Microsoft Storen sovellusten kehittämisen ja asentamisen integroidusta kehitysympäristöstä (IDE)</string>
+      <string id="AllowDevelopmentWithoutDevLicenseExplanation">
+        Sallii tai estää Microsoft Storen sovellusten kehittämisen ja asentamisen suoraan integroidusta kehitysympäristöstä.
+
+        Jos otat tämän asetuksen käyttöön ja jos otat käyttöön Salli kaikkien luotettujen sovellusten asennus -ryhmäkäytännön, voit kehittää Microsoft Storen sovelluksia ja asentaa niitä suoraan integroidusta kehitysympäristöstä.
+
+        Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, et voi kehittää Microsoft Storen sovelluksia tai asentaa niitä suoraan integroidusta kehitysympäristöstä.
+      </string>
+      <string id="DisableDeploymentToNonSystemVolumes">Poista käytöstä Windows-sovellusten asentaminen muihin kuin järjestelmäasemiin</string>
+      <string id="DisableDeploymentToNonSystemVolumesExplanation">
+        Tämän käytäntöasetuksen avulla voit hallita Windows-sovellusten asentamista muihin asemiin, kuten toissijaisiin osioihin, USB-muistitikkuihin tai SD-kortteihin.
+
+        Jos otat tämän asetuksen käyttöön, et pysty siirtämään tai asentamaan Windows-sovelluksia asemaan, joka ei ole järjestelmäasema.
+
+        Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, voit siirtää tai asentaa Windows-sovelluksia muihin asemiin.
+      </string>
+      <string id="RestrictAppDataToSystemVolume">Estää käyttäjien sovellustietojen tallentamisen muihin kuin järjestelmäasemiin</string>
+      <string id="RestrictAppDataToSystemVolumeExplanation">
+        Estää käyttäjien sovellustietojen siirtämisen toiseen sijaintiin, kun sovellus siirretään tai asennetaan toiseen sijaintiin.
+
+        Jos otat tämän asetuksen käyttöön, kaikki käyttäjien sovellustiedot pysyvät järjestelmäasemassa riippumatta siitä, mihin sovellus asennetaan.
+
+        Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, käyttäjien sovellustiedot siirretään mukana, kun sovellus siirretään eri asemaan.
+      </string>
+      <string id="AllowSharedLocalAppData">Salli Windows-sovelluksen jakaa sovellustietoja käyttäjien välillä</string>
+      <string id="AllowSharedLocalAppDataExplanation">Hallinnoi Windows-sovelluksen kykyä jakaa tietoja sovelluksen asentaneiden käyttäjien välillä.
+
+        Jos otat tämän käytännön käyttöön, Windows-sovellus pystyy jakamaan sovellustietoja kyseisen sovelluksen muiden esiintymien kanssa. Tiedot jaetaan SharedLocal-kansion kautta. Tämä kansio on käytettävissä Windows.Storage-ohjelmointirajapinnan kautta.
+
+        Jos poistat tämän käytännön käytöstä, Windows-sovellus ei pysty jakamaan sovellustietoja kyseisen sovelluksen muiden esiintymien kanssa. Jos tämä käytäntö on otettu aiemmin käyttöön, aiemmin jaetut sovellustiedot pysyvät SharedLocal-kansiossa.
+      </string>
+      <string id="BlockNonAdminUserInstall">Estä muita kuin järjestelmänvalvojaa asentamasta paketoituja Windows-sovelluksia</string>
+      <string id="BlockNonAdminUserInstallExplanation">Hallinnoi muiden kuin järjestelmänvalvojien mahdollisuutta asentaa Windows-sovelluspaketteja.
+
+        Jos otat tämän käytännön käyttöön, muut kuin järjestelmänvalvojat eivät voi asentaa Windows-sovelluspaketteja. Kun järjestelmänvalvoja haluaa asentaa sovelluksen, hänen on tehtävä se järjestelmänvalvojaympäristössä (esimerkiksi järjestelmänvalvojan PowerShell-ikkunassa). Kaikki käyttäjät voivat edelleen asentaa Windows-sovelluspaketteja Microsoft Storesta, jos muut käytännöt sallivat sen.
+
+        Jos poistat tämän käytännön käytöstä tai et määritä sitä, kaikki käyttäjät pystyvät asentamaan Windows-sovelluspaketteja.
+      </string>
+      <string id="DisableBackgroundAutoUpdates">Ei salli ohiladattujen sovellusten automaattista päivitystä taustalla</string>
+      <string id="DisableBackgroundAutoUpdatesExplanation">Hallitsee ohiladatun sovelluksen kykyä päivittää automaattisesti taustalla.
+
+Jos otat tämän käytännön käyttöön, ohiladatut sovellukset eivät päivity automaattisesti taustalla.
+
+Jos poistat tämän käytännön käytöstä, ohiladatut sovellukset päivitetään automaattisesti taustalla.
+
+Oletusarvo on ei käytössä (avainta ei ole).
+      </string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdates">Ei salli ohiladattujen sovellusten automaattista päivitystä taustalla käytön mukaan laskutettavassa verkossa</string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdatesExplanation">Hallitsee ohiladatun sovelluksen kykyä päivittää automaattisesti taustalla käytön mukaan laskutettavassa verkossa.
+
+Jos otat tämän käytännön käyttöön, ohiladatut sovellukset eivät päivity automaattisesti taustalla käytön mukaan laskutettavassa verkossa.
+
+Jos poistat tämän käytännön käytöstä, ohiladatut sovellukset päivitetään automaattisesti taustalla käytön mukaan laskutettavassa verkossa.
+
+Oletusarvo on ei käytössä (avainta ei ole).
+      </string>
+      <string id="DisablePerUserUnsignedPackagesByDefault">Ei salli käyttäjäkohtaisten allekirjoittamattomien pakettien asentamista oletusarvoisesti (edellyttää erikseen sallimista asennusta kohden)</string>
+      <string id="DisablePerUserUnsignedPackagesByDefaultExplanation">Ei salli käyttäjäkohtaisten allekirjoittamattomien pakettien asentamista oletusarvoisesti (edellyttää erikseen sallimista asennuskohtaisesti)
+
+        Jos otat tämän käytännön käyttöön, AllowUnsigned-asetuksen oletusarvo on False.
+
+        Jos poistat tämän käytännön käytöstä, AllowUnsigned-asetuksen oletusarvo on True.
+
+        Oletus on poistettu käytöstä (avainta ei ole).
+      </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

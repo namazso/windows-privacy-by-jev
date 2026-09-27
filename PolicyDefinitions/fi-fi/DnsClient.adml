@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>kirjoita näyttönimi tähän</displayName>
+  <description>kirjoita kuvaus tähän</description>
+  <resources>
+    <stringTable>
+      <string id="DNS_Client">DNS-asiakas</string>
+      <string id="DNS_Domain">Yhteyskohtainen DNS-liite</string>
+      <string id="DNS_Domain_Help">Määrittää yhteyskohtaisen DNS-liitteen. Tämä käytäntöasetus ohittaa paikalliset yhteyskohtaiset DNS-liitteet ja DHCP:n avulla määritetyt liitteet.
+
+Voit käyttää tätä käytäntöasetusta valitsemalla Käytössä ja kirjoittamalla DNS-liitettä edustavan merkkijonoarvon.
+
+Jos otat tämän käytäntöasetuksen käyttöön, kirjoittamaasi DNS-liitettä käytetään kaikissa DNS-asiakkaan käyttämissä verkkoyhteyksissä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallista tai DHCP:n toimittamaa yhteyskohtaista DNS-liitettä, jos se on määritetty.</string>
+      <string id="DNS_NameServer">DNS-palvelimet</string>
+      <string id="DNS_NameServer_Help">Määrittää DNS-palvelimet, joihin DNS-asiakas lähettää kyselyt yrittäessään selvittää nimiä. Tämä käytäntöasetus ohittaa paikallisesti määritettyjen ja DHCP:llä määritettyjen DNS-palvelimien luettelon.
+
+Voit käyttää tätä käytäntöasetusta valitsemalla Käytössä ja kirjoittamalla ip-osoitteiden välilyöntierottimella erotellun luettelon käytettävissä olevaan kenttään. Jos haluat käyttää tätä käytäntöasetusta, sinun on annettava vähintään yksi IP-osoite.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-palvelinten luetteloa käytetään kaikissa DNS-asiakkaan käyttämissä verkkoyhteyksissä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallista tai DHCP:n toimittamaa DNS-palvelinten luetteloa, jos se on määritetty.</string>
+      <string id="DNS_PrimaryDnsSuffix">Ensisijainen DNS-liite</string>
+      <string id="DNS_PrimaryDnsSuffix_Help">Määrittää ensisijaisen DNS-liitteen, jota DNS-asiakas käyttää DNS-nimen rekisteröinnissä ja DNS-nimenselvityksessä.
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja kirjoita koko ensisijainen DNS-liite, jonka haluat määrittää. Esimerkki: microsoft.com.
+
+Tärkeää: jotta tämän käytäntöasetuksen muutokset otetaan käyttöön DNS-asiakkaassa, Käynnistä Windows uudelleen.
+
+Jos otat tämän käytäntöasetuksen käyttöön, se ohittaa järjestelmän ohjauspaneelin DNS-liite ja NetBIOS-tietokonenimi -valintaikkunassa määritetyn ensisijaisen DNS-liitteen.
+
+Tämän käytäntöasetuksen avulla voit estää käyttäjiä, myös paikallisia järjestelmänvalvojia, muuttamasta ensisijaista DNS-liitettä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallista ensisijaista DNS-liitettä, joka on yleensä sen Active Directory toimialueen DNS-nimi, johon se on liitetty.</string>
+      <string id="DNS_RegisterAdapterName">Rekisteröi DNS-tietueet yhteyskohtaisella DNS-liitteellä</string>
+      <string id="DNS_RegisterAdapterName_Help">Määrittää, rekisteröikö dynaamista DNS-rekisteröintiä suorittava DNS-asiakas A- ja PTR-resurssitietueet tietokoneen nimen ketjutuksella ja yhteyskohtaisella DNS-jälkiliitteellä sen lisäksi, että nämä tietueet rekisteröidään sen tietokoneen nimen ja ensisijaisen DNS-jälkiliitteen ketjutuksella.
+
+Dynaamista DNS-rekisteröintiä suorittava DNS-asiakas rekisteröi oletusarvoisesti A- ja PTR-resurssitietueet, joiden tietokoneen nimi ja ensisijainen DNS-jälkiliite on yhdistetty. Esimerkiksi omatietokoneen nimi ja microsoft.com ensisijainen DNS-liite rekisteröidään seuraavasti: mycomputer.microsoft.com.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-asiakas rekisteröi A- ja PTR-resurssitietueet yhteyskohtaisella DNS-jälkiliitteellä ensisijaisen DNS-jälkiliitteen lisäksi. Tämä koskee kaikkia DNS-asiakkaan käyttämiä verkkoyhteyksiä.
+
+DNS-asiakas rekisteröi esimerkiksi oman tietokoneen nimen, microsoft.com ensisijaisen DNS-liitteen ja VPNconnection-yhteyden yhteyskohtaisen DNS-liitetiedoston, rekisteröi A- ja PTR-resurssitietueet omaa tietokonetta varten. VPNconnection ja mycomputer.microsoft.com, kun tämä käytäntöasetus on käytössä.
+
+Tärkeää: DNS-asiakas ohittaa tämän käytäntöasetuksen, jos dynaaminen DNS-rekisteröinti on poistettu käytöstä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, DNS-asiakas ei rekisteröi A- ja PTR-resurssitietueita yhteyskohtaisen DNS-liitteen avulla.</string>
+      <string id="DNS_RegisterReverseLookup">Rekisteröi PTR-tietueet</string>
+      <string id="DNS_RegisterReverseLookup_DoNotRegister">Älä rekisteröi</string>
+      <string id="DNS_RegisterReverseLookup_Help">Määrittää, rekisteröikö DNS-asiakas PTR-resurssitietueet.
+
+Oletusarvon mukaan DNS-asiakkaat, jotka on määritetty suorittamaan dynaaminen DNS-rekisteröinti, yrittävät rekisteröidä PTR-resurssitietueen vain, jos ne rekisteröivät vastaavan A-resurssitietueen.
+
+Jos otat tämän käytäntöasetuksen käyttöön, PTR-tietueiden rekisteröinti määräytyy Rekisteröi PTR-tietueet -kohdassa valitun asetuksen mukaan.
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja valitse sitten jokin seuraavista vaihtoehdoista avattavasta luettelosta:
+
+Älä rekisteröi: DNS-asiakas ei yritä rekisteröidä PTR-resurssitietueita.
+
+Rekisteröi: DNS-asiakas yrittää rekisteröidä PTR-resurssitietueet, vaikka vastaavan A-tietueen rekisteröinti ei onnistunut.
+
+Rekisteröi vain, jos A-tietueen rekisteröinti onnistuu: DNS-asiakas yrittää rekisteröidä PTR-resurssitietueet vain, jos vastaavan A-tietueen rekisteröinti onnistui.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallisesti määritettyjä asetuksia.</string>
+      <string id="DNS_RegisterReverseLookup_Register">Rekisteröi</string>
+      <string id="DNS_RegisterReverseLookup_RegisterOnlyIfASucceeds">Rekisteröi vain, jos A-tietueen rekisteröinti onnistuu</string>
+      <string id="DNS_RegistrationEnabled">Dynaaminen päivitys</string>
+      <string id="DNS_RegistrationEnabled_Help">Määrittää, onko dynaaminen DNS-päivitys käytössä. Dynaamista DNS-päivitystä varten määritetyt DNS-asiakkaat rekisteröivät ja päivittävät automaattisesti DNS-resurssitietueensa DNS-palvelimessa.
+
+Jos otat tämän käytäntöasetuksen käyttöön tai et määritä sitä, DNS-asiakas yrittää käyttää dynaamista DNS-rekisteröintiä kaikissa verkkoyhteyksissä, joissa yhteyskohtainen dynaaminen DNS-rekisteröinti on käytössä. Jotta dynaaminen DNS-rekisteröinti otetaan käyttöön verkkoyhteydessä, yhteyskohtaisen määrityksen on sallittava dynaaminen DNS-rekisteröinti, eikä tätä käytäntöasetusta saa poistaa käytöstä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä, DNS-asiakas ei voi käyttää dynaamista DNS-rekisteröintiä missään verkkoyhteyksissään yksittäisten verkkoyhteyksien määrityksistä riippumatta.</string>
+      <string id="DNS_RegistrationOverwritesInConflict">Korvaa ristiriitaiset osoitteet</string>
+      <string id="DNS_RegistrationOverwritesInConflict_Help">Määrittää, korvaavatko dynaamiset päivitykset aiemmin luodut resurssitietueet, jotka sisältävät ristiriitaisia IP-osoitteita.
+
+Tämä käytäntöasetus on tarkoitettu DNS-asiakkaille, jotka rekisteröivät osoiteresurssitietueet (A) DNS-vyöhykkeissä, jotka eivät käytä suojattua dynaamista Päivitykset. Suojattu dynaaminen päivitys säilyttää resurssitietueiden omistajuuden eikä salli DNS-asiakkaan korvata muiden DNS-asiakkaiden rekisteröimiä tietueita.
+
+Resurssitietueiden dynaamisen päivityksen aikana vyöhykkeessä, joka ei käytä suojattua dynaamista Päivitykset, saattaa olla A-resurssitietue, joka liittää asiakkaan isäntänimen toiseen IP-osoitteeseen kuin asiakkaan parhaillaan käyttämään IP-osoitteeseen. Oletusarvon mukaan DNS-asiakas yrittää korvata nykyisen A-resurssitietueen A-resurssitietueella, jolla on asiakkaan nykyinen IP-osoite.
+
+Jos otat tämän käytäntöasetuksen käyttöön tai jos et määritä sitä, DNS-asiakkaat säilyttävät oletustoimintansa ja yrittävät korvata ristiriitaiset A-resurssitietueet dynaamisen päivityksen aikana.
+
+Jos poistat tämän käytäntöasetuksen käytöstä, ristiriitaisia IP-osoitteita sisältäviä aiemmin luotuja A-resurssitietueita ei korvata dynaamisen päivityksen aikana, ja virhe tallennetaan Tapahtumienvalvonta.</string>
+      <string id="DNS_RegistrationRefreshInterval">Rekisteröinnin päivitysväli</string>
+      <string id="DNS_RegistrationRefreshInterval_Help">Määrittää aikavälin, jonka DNS-asiakkaat käyttävät A- ja PTR-resurssin rekisteröinnin päivittämiseen. Tämä käytäntöasetus ottaa käyttöön vain dynaamisia DNS-päivityksiä suorittavat DNS-asiakkaat.
+
+DNS-asiakkaat, jotka on määritetty suorittamaan A- ja PTR-resurssitietueiden dynaaminen DNS-rekisteröinti, rekisteröivät tietueensa säännöllisesti uudelleen DNS-palvelimiin, vaikka tietue ei olisi muuttunut. Tämä uudelleenrekisteröinti vaaditaan osoittamaan DNS-palvelimille, että tietueet ovat ajan tasalla ja että niitä ei tule poistaa automaattisesti (skaalata), kun DNS-palvelin on määritetty poistamaan vanhentuneet tietueet.
+
+Varoitus: Jos tietueiden skaalaus on käytössä vyöhykkeessä, tämän käytäntöasetuksen arvon ei tule koskaan olla pidempi kuin DNS-vyöhykkeen päivitysvälin arvo. Rekisteröinnin päivitysvälin määrittäminen DNS-vyöhykkeen päivitysväliä pidemmäksi voi johtaa A- ja PTR-resurssitietueiden ei-toivottuun poistamiseen.
+
+Jos haluat määrittää rekisteröinnin päivitysvälin, valitse Käytössä ja anna arvo 1800 tai suurempi. Määrittämäsi arvo on rekisteröinnin päivitysvälissä käytettävien sekuntien määrä. Esimerkiksi 1 800 sekuntia on 30 minuuttia.
+
+Jos otat tämän käytäntöasetuksen käyttöön, määrittämääsi rekisteröinnin päivitysväliä käytetään kaikissa verkkoyhteyksissä, joita tätä käytäntöasetusta vastaanottavat DNS-asiakkaat käyttävät.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, DNS-asiakas käyttää paikallisen tai DHCP:n määrittämää asetusta. Oletusarvoisesti staattisella IP-osoitteella määritetyt DNS-asiakkaat yrittävät päivittää DNS-resurssitietueensa 24 tunnin välein, ja DHCP-asiakkaat yrittävät päivittää DNS-resurssitietueitaan, kun DHCP-varaus myönnetään tai uusitaan.</string>
+      <string id="DNS_RegistrationTtl">A- ja PTR-tietueiden TTL-arvo</string>
+      <string id="DNS_RegistrationTtl_Help">
+Määrittää elinajan (TTL) arvon A- ja PTR-resurssitietueissa, jotka on rekisteröinyt DNS-asiakas, johon tätä käytäntöasetusta käytetään.
+
+Määritä TTL valitsemalla Käytössä ja antamalla arvo sekunteina (esimerkiksi 900 on 15 minuuttia).
+
+Jos otat tämän käytäntöasetuksen käyttöön, määrittämääsi TTL-arvoa käytetään kaikissa DNS-asiakkaan käyttämissä verkkoyhteyksissä rekisteröityihin DNS-resurssitietueisiin.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää DNS:ssä määritettyjä TTL-asetuksia. Oletusarvon mukaan TTL on 1 200 sekuntia (20 minuuttia).</string>
+      <string id="DNS_SearchList">DNS-liitteiden etsintäluettelo</string>
+      <string id="DNS_SearchList_Help">Määrittää DNS-jälkiliitteet, jotka liitetään tarkentamattomaan yhden nimen nimeen ennen kyseisen nimen DNS-kyselyn lähettämistä.
+
+Yksiotsikkoinen nimi ei sisällä yhtään pistettä. Nimi "esimerkki" on yksiotsikkoinen nimi. Tämä eroaa täydellisestä toimialuenimestä, kuten "example.microsoft.com".
+
+DNS-asiakkaat, jotka vastaanottavat tämän käytäntöasetuksen, liittävät yhden tai useamman jälkiliitteen DNS-kyselyihin yhden nimen saamiseksi. Esimerkiksi yhden nimen "esimerkki" DNS-kyselyksi muutetaan "example.microsoft.com" ennen kyselyn lähettämistä DNS-palvelimeen, jos tämä käytäntöasetus on käytössä ja jälkiliite on "microsoft.com".
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja kirjoita sitten merkkijonoarvo, joka edustaa DNS-jälkiliitettä, joka tulee liittää yksiotsikkoisiin nimiin. Sinun on määritettävä vähintään yksi jälkiliite. Käytä pilkuin eroteltua merkkijonoa, kuten "microsoft.com,serverua.microsoft.com,office.microsoft.com", jos haluat määrittää useita jälkiliitettä.
+
+Jos otat tämän käytäntöasetuksen käyttöön, kullekin kyselylle liitetään yksi DNS-liite kerrallaan. Jos kysely ei onnistu, uusi DNS-jälkiliite lisätään epäonnistuneen jälkiliitteen tilalle ja tämä uusi kysely lähetetään. Arvoja käytetään siinä järjestyksessä, jossa ne näkyvät merkkijonossa, alkaen vasemmanpuoleisimmasta arvosta ja jatkamalla oikealle, kunnes kysely onnistuu tai kaikkia jälkiliitettä yritetään.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, ensisijaiset DNS-jälkiliitteet ja verkkoyhteyskohtaiset DNS-liitteet liitetään tarkentamattomiin kyselyihin.</string>
+      <string id="DNS_UpdateSecurityLevel">Päivityksen suojaustaso</string>
+      <string id="DNS_UpdateSecurityLevel_Help">Määrittää dynaamisten DNS-päivitysten suojaustason.
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja valitse sitten jokin seuraavista arvoista:
+
+Suojaamaton, jota seuraa suojattu - DNS-asiakas lähettää suojattuja dynaamisia päivityksiä vain, kun suojaamattomia dynaamisia päivityksiä ei hyväksytä.
+
+Vain suojaamaton – DNS-asiakas lähettää vain suojaamattomia dynaamisia päivityksiä.
+
+Vain suojattu – DNS-asiakas lähettää vain suojattuja dynaamisia päivityksiä.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-asiakkaat, jotka yrittävät lähettää dynaamisia DNS-päivityksiä, käyttävät tässä käytäntöasetuksessa määritettyä suojaustasoa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä sitä, DNS-asiakkaat käyttävät paikallisia asetuksia. Oletusarvoisesti DNS-asiakkaat yrittävät käyttää suojaamatonta dynaamista päivitystä ensin. Jos suojaamaton päivitys on estetty, asiakkaat yrittävät käyttää suojattua päivitystä.</string>
+      <string id="DNS_UpdateSecurityLevel_OnlySecure">Vain suojattu</string>
+      <string id="DNS_UpdateSecurityLevel_OnlyUnsecure">Vain suojaamaton</string>
+      <string id="DNS_UpdateSecurityLevel_UnsecureFollowedBySecure">Suojaamaton ja suojattu</string>
+      <string id="DNS_UpdateTopLevelDomainZones">Päivitä ylätason toimialuevyöhykkeet</string>
+      <string id="DNS_UpdateTopLevelDomainZones_Help">Määrittää, voiko DNS-asiakas lähettää dynaamisia päivityksiä vyöhykkeisiin, joilla on yksiselitteinen nimi. Näitä alueita kutsutaan myös ylätason toimialuevyöhykkeiksi, esimerkiksi com.
+
+Oletusarvon mukaan dynaamisia DNS-päivityksiä suorittamaan määritetty DNS-asiakas päivittää DNS-vyöhykkeen, joka määrää sen DNS-resurssitietueista, ellei määräävä vyöhyke ole ylimmän tason toimialue- tai päävyöhyke.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-asiakas lähettää dynaamiset päivitykset mihin tahansa vyöhykkeeseen, joka määrää resurssitietueista, jotka DNS-asiakkaan on päivitettävä, päävyöhykettä lukuun ottamatta.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas ei lähetä dynaamisia päivityksiä päävyöhykkeeseen tai ylimmän tason toimialuevyöhykkeisiin, jotka määräävät DNS-asiakkaan päivittettävät resurssitietueet.</string>
+      <string id="DNS_UseDomainNameDevolution">Ensisijaisen DNS-liitteen lyhentäminen</string>
+      <string id="DNS_UseDomainNameDevolution_Help">Määrittää, suorittaako DNS-asiakas ensisijaisen DNS-liitteen lyhentämisen nimenselvityksen aikana.
+
+Lyhentämisessä DNS-asiakas luo kyselyjä lisäämällä yksiosaisen tarkentamattoman toimialuenimen ensisijaisen DNS-liitteen nimen ylätason liitteeseen sekä kyseisen liitteen ylätasoon jne. ja pysähtyy, jos nimenselvitys onnistuu tai kun lyhentämisasetuksissa määritetty taso on saavutettu. Lyhentämistä voidaan käyttää, kun käyttäjä tai sovellus lähettää yksiosaisen toimialuenimen kyselyn.
+
+DNS-asiakas lisää DNS-liitteet yksiosaiseen tarkentamattomaan toimialuenimeen Internet-protokollan (TCP/IP) ominaisuuksien TCP/IP-lisäasetukset -valintaikkunan DNS-välilehden Liitä ensisijaiset ja yhteyskohtaiset DNS-liitteet -valintanapin ja Liitä ensisijaisen DNS-liitteen yläliitteet -valintaruudun tilan perusteella.
+
+Lyhentämistä ei oteta käyttöön, jos yleinen liitteiden etsintäluettelo on määritetty käyttämällä ryhmäkäytäntöä.
+
+Jos yleistä liitteiden etsintäluetteloa ei ole määritetty ja Liitä ensisijaiset ja yhteyskohtaiset DNS-liitteet -valintanappi on valittu, DNS-asiakas lisää seuraavat nimet yksiosaiseen nimeen lähettäessään DNS-kyselyjä:
+
+Ensisijainen DNS-liite sellaisena kuin se on määritetty järjestelmän Ohjauspaneelin Tietokoneen nimi -välilehdessä.
+
+Kukin yhteyskohtainen DNS-liite, joka on määritetty joko DHCP:n kautta tai tämän yhteysruudun DNS-liitteessä kunkin yhteyden TCP/IP-lisäasetukset -valintaikkunan DNS-välilehdessä.
+
+Kun käyttäjä lähettää esimerkiksi yksiosaisen nimen kyselyn, kuten esimerkki, DNS-asiakas lisää liitteen microsoft.com, jolloin tuloksena on kysely esimerkki.microsoft.com, ennen kyselyn lähettämistä DNS-palvelimeen.
+
+Jos DNS-liitteen etsintäluetteloa ei ole määritetty, DNS-asiakas lisää ensisijaisen DNS-liitteen yksiosaiseen nimeen. Jos kysely epäonnistuu, yhteyskohtainen DNS-liite lisätään uuteen kyselyyn. Jos yksikään näistä kyselyistä ei ratkea, asiakas lyhentää tietokoneen ensisijaista DNS-liitettä (jättää pois ensisijaisen DNS-liitteen vasemmanpuoleisimman nimen), lisää tämän lyhennetyn ensisijaisen DNS-liitteen yksiosaiseen nimeen ja lähettää tämän uuden kyselyn DNS-palvelimeen.
+
+Jos esimerkiksi yksiosaiseen nimeen "esimerkki" liitetään ensisijainen DNS-liite ooo.aaa.microsoft.com ja nimeä esimerkki.ooo.aaa.microsoft.com koskeva DNS-kysely epäonnistuu, DNS-asiakas lyhentää ensisijaista DNS-liitettä (poistamalla vasemmanpuoleisen osan) ja lähettää nimeä esimerkki.aaa.microsoft.com koskevan kyselyn. Jos tämä kysely epäonnistuu, ensisijaista DNS-liitettä lyhennetään edelleen ja kysely lähetetään nimestä esimerkki.microsoft.com. Jos tämä kysely epäonnistuu, lyhentämistä jatketaan lyhentämistason rajoissa ja kysely lähetetään nimestä esimerkki.microsoft.com, joka vastaa lyhentämistasoa kaksi. Ensisijaista DNS-liitettä ei voi lyhentää lyhentämistasoa kaksi enempää. Lyhentämistaso voidaan määrittää käyttämällä ensisijaisen DNS-liitteen lyhentämistason käytäntöasetusta. Oletuslyhennystaso on kaksi.
+
+Jos otat tämän käytäntöasetuksen käyttöön tai jos et määritä sitä, DNS-asiakkaat yrittävät ratkaista yksiosaiset nimet käyttämällä ratkaistavan yksiosaisen nimen ja lyhennetyn ensisijaisen DNS-liitteen yhdistelmiä.
+
+Jos poistat tämän käytäntöasetuksen käytöstä, DNS-asiakkaat eivät yritä ratkaista nimiä, jotka ovat ratkaistavan yksiosaisen nimen ja lyhennetyn ensisijaisen DNS-liitteen yhdistelmiä.</string>
+      <string id="DNS_DomainNameDevolutionLevel">Ensisijaisen DNS-liitteen lyhentämistaso</string>
+      <string id="DNS_DomainNameDevolutionLevel_Help">Määrittää lyhentämistason, jota DNS-asiakkaat käyttävät, jos ensisijaisen DNS-liitteen lyhentämistä käytetään nimenselvityksen aikana.
+
+Lyhentämisessä DNS-asiakas luo kyselyjä lisäämällä yksiosaisen tarkentamattoman toimialuenimen ensisijaisen DNS-liitteen nimen ylätason liitteeseen sekä kyseisen liitteen ylätasoon jne. ja pysähtyy, jos nimenselvitys onnistuu tai kun lyhentämisasetuksissa määritetty taso on saavutettu. Lyhentämistä voidaan käyttää, kun käyttäjä tai sovellus lähettää yksiosaisen toimialuenimen kyselyn.
+
+DNS-asiakas lisää DNS-liitteet yksiosaiseen tarkentamattomaan toimialuenimeen Internet-protokollan (TCP/IP) ominaisuuksien TCP/IP-lisäasetukset -valintaikkunan DNS-välilehden Liitä ensisijaiset ja yhteyskohtaiset DNS-liitteet -valintanapin ja Liitä ensisijaisen DNS-liitteen yläliitteet -valintaruudun tilan perusteella.
+
+Lyhentämistä ei oteta käyttöön, jos yleinen liitteiden etsintäluettelo on määritetty käyttämällä ryhmäkäytäntöä.
+
+Jos yleistä liitteiden etsintäluetteloa ei ole määritetty ja Liitä ensisijaiset ja yhteyskohtaiset DNS-liitteet -valintanappi on valittu, DNS-asiakas lisää seuraavat nimet yksiosaiseen nimeen lähettäessään DNS-kyselyjä:
+
+Ensisijainen DNS-liite sellaisena kuin se on määritetty järjestelmän Ohjauspaneelin Tietokoneen nimi -välilehdessä.
+
+Kukin yhteyskohtainen DNS-liite, joka on määritetty joko DHCP:n kautta tai tämän yhteysruudun DNS-liitteessä kunkin yhteyden TCP/IP-lisäasetukset -valintaikkunan DNS-välilehdessä.
+
+Kun käyttäjä lähettää esimerkiksi yksiosaisen nimen kyselyn, kuten esimerkki, DNS-asiakas lisää liitteen microsoft.com, jolloin tuloksena on kysely esimerkki.microsoft.com, ennen kyselyn lähettämistä DNS-palvelimeen.
+
+Jos DNS-liitteen etsintäluetteloa ei ole määritetty, DNS-asiakas lisää ensisijaisen DNS-liitteen yksiosaiseen nimeen. Jos kysely epäonnistuu, yhteyskohtainen DNS-liite lisätään uuteen kyselyyn. Jos yksikään näistä kyselyistä ei ratkea, asiakas lyhentää tietokoneen ensisijaista DNS-liitettä (jättää pois ensisijaisen DNS-liitteen vasemmanpuoleisimman nimen), lisää tämän lyhennetyn ensisijaisen DNS-liitteen yksiosaiseen nimeen ja lähettää tämän uuden kyselyn DNS-palvelimeen.
+
+Jos esimerkiksi yksiosaiseen nimeen "esimerkki" liitetään ensisijainen DNS-liite ooo.aaa.microsoft.com ja nimeä esimerkki.ooo.aaa.microsoft.com koskeva DNS-kysely epäonnistuu, DNS-asiakas lyhentää ensisijaista DNS-liitettä (poistamalla vasemmanpuoleisen osan) ja lähettää nimeä esimerkki.aaa.microsoft.com koskevan kyselyn. Jos tämä kysely epäonnistuu, ensisijaista DNS-liitettä lyhennetään edelleen ja kysely lähetetään nimestä esimerkki.microsoft.com. Jos tämä kysely epäonnistuu, lyhentämistä jatketaan lyhentämistason rajoissa ja kysely lähetetään nimestä esimerkki.microsoft.com, joka vastaa lyhentämistasoa kaksi. Ensisijaista DNS-liitettä ei voi lyhentää lyhentämistasoa kaksi enempää. Lyhentämistaso voidaan määrittää käyttämällä tätä käytäntöasetusta. Oletuslyhennystaso on kaksi.
+
+Jos otat tämän käytäntöasetuksen käyttöön ja DNS-lyhentäminen on myös käytössä, DNS-asiakkaat käyttävät määrittämääsi DNS-lyhentämistasoa.
+
+Jos käytäntöasetus on poistettu käytöstä tai jätetty määrittämättä, DNS-asiakkaat käyttävät oletuslyhentämistasoa kaksi. Tämä edellyttää, että DNS-lyhentäminen on otettu käyttöön.</string>
+      <string id="DNS_TurnOffMulticast">Poista monilähetyksen nimiselvitys käytöstä</string>
+      <string id="DNS_TurnOffMulticast_Help">Määrittää, että linkin paikallisen monilähetyksen nimenselvitys (LLMNR) on poistettu käytöstä DNS-asiakkaassa.
+
+LLMNR on toissijainen nimenselvitysprotokolla. LLMNR:n avulla kyselyt lähetetään monilähetyksenä paikallisen verkkolinkin kautta yhdessä aliverkossa DNS-asiakkaasta toiseen DNS-asiakkaaseen samassa aliverkossa, jossa on myös LLMNR käytössä. LLMNR ei edellytä DNS-palvelimen tai DNS-asiakkaan määritystä, ja se tarjoaa nimenselvityksen tilanteissa, joissa tavallinen DNS-nimenselvitys ei ole mahdollista.
+
+Jos otat tämän käytäntöasetuksen käyttöön, LLMNR poistetaan käytöstä kaikissa DNS-asiakkaan käytettävissä olevissa verkkosovittimista.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, LLMNR otetaan käyttöön kaikissa käytettävissä olevissa verkkosovittimista.</string>
+      <string id="DNS_AppendToMultiLabelName">Salli DNS-liitteiden liittäminen tarkentamattomiin moniosaisiin nimikyselyihin</string>
+      <string id="DNS_AppendToMultiLabelName_Help">Määrittää, että DNS-asiakas voi liittää jälkiliitteitä tarkentamattomaan moniotsikkonimeen ennen seuraavien DNS-kyselyjen lähettämistä, jos alkuperäinen nimikysely epäonnistuu.
+
+Nimeä, joka sisältää pisteet, mutta ei piste-päätettä, kutsutaan tarkentamattomaksi moniotsikkonimeksi, esimerkiksi "server.corp" on tarkentamaton moniotsikkonimi. Nimi server.corp.contoso.com on esimerkki täydellisestä nimestä, koska se sisältää lopettavan pisteen.
+
+Jos esimerkiksi jälkiliitteen liittäminen on sallittua, DNS-asiakas tekee ensin kyselyn palvelimen.corp moniotsikkokyselystä. Jos kysely onnistuu, vastaus palautetaan asiakkaalle. Jos kysely epäonnistuu, tarkentamaton moniotsikkonimi liitetään DNS-jälkiliitteisiin. Nämä jälkiliitteet voidaan johtaa paikallisen DNS-asiakkaan ensisijaisen toimialueen jälkiliitteen, yhteyskohtaisen toimialueen jälkiliitteen ja DNS-jälkiliitteen hakuluettelon yhdistelmästä.
+
+Jos jälkiliitteiden liittäminen sallitaan ja DNS-asiakas, jonka ensisijainen toimialueen jälkiliite on contoso.com, suorittaa kyselyn kohteelle server.corp, DNS-asiakas lähettää ensin kyselyn kohteelle server.corp ja sitten kyselyn kohteelle "server.corp.contoso.com". Toinen, jos ensimmäinen kysely epäonnistuu.
+
+Jos otat tämän käytäntöasetuksen käyttöön, jälkiliitteet voidaan liittää tarkentamattomaan moniotsikon nimeen, jos alkuperäinen nimikysely epäonnistuu.
+
+Jos poistat tämän käytäntöasetuksen käytöstä, jälkiliitteitä ei liitetä tarkentamattomiin moniotsikkoisiin nimikyselyihin, jos alkuperäinen nimikysely epäonnistuu.
+
+Jos et määritä tätä käytäntöasetusta, DNS-asiakas käyttää paikallisia asetuksiaan määrittämään tarkentamattomien moniotsikkonimien kyselyn toiminnan.</string>
+      <string id="DNS_SmartMultiHomedNameResolution">Poista älykäs, useita tietokoneita sisältävän palvelimen nimenselvitys käytöstä</string>
+      <string id="DNS_SmartMultiHomedNameResolution_Help">Määrittää, että useita verkkokortteja sisältävän DNS-asiakkaan tulisi optimoida nimenselvitys verkkojen yli.  Asetus parantaa suorituskykyä lähettämällä rinnakkaisia DNS-kyselyjä, linkin paikallisen monilähetyksen nimenselvityskyselyjä (LLMNR) ja NetBIOS TCP/IP:n päällä (NetBT) -kyselyjä kaikkiin verkkoihin. Jos vastauksia saadaan useita, kelvollinen vastaus määritetään verkon sidontajärjestyksen avulla.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-asiakas ei käytä optimointia.  DNS-kyselyt lähetetään ensin kaikkiin verkkoihin. LLMNR-kyselyt lähetetään, jos DNS-kyselyt epäonnistuvat. NetBT-kyselyt lähetetään, jos LLMNR-kyselyt epäonnistuvat.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä sitä, nimenselvitys optimoidaan DNS-, LLMNR- ja NetBT-kyselyjen lähetyksen yhteydessä.</string>
+      <string id="DNS_SmartProtocolReorder">Poista älykäs protokollan uudelleenjärjestely käytöstä</string>
+      <string id="DNS_SmartProtocolReorder_Help">Määrittää, että DNS-asiakkaan tulee suosia vastauksia linkin paikallisista nimenselvitysprotokollista muissa kuin toimialueverkoissa DNS-vastauksiin nähden, kun tietueiden nimille lähetetään kyselyitä. Esimerkkejä linkin paikallisista nimenselvitysprotokollista ovat linkin paikallinen monilähetyksen nimenselvitys (LLMNR) ja NetBIOS TCP/IP:n (NetBT) kautta.
+
+Jos otat tämän käytäntöasetuksen käyttöön, DNS-asiakas käyttää mieluummin DNS-vastauksia, joita seuraa LLMNR ja sen jälkeen NetBT kaikissa verkoissa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä tätä käytäntöasetusta, DNS-asiakas haluaa linkittää paikalliset vastaukset tietuenimikyselyihin muissa kuin toimialueverkoissa.
+
+Huomautus: Tämä käytäntöasetus on käytettävissä vain, jos useiden kotien älykkään nimenselvityskäytännön asetus on poistettu käytöstä tai sitä ei ole määritetty.</string>
+      <string id="DNS_AllowFQDNNetBiosQueries">Salli NetBT-kyselyt täydellisissä toimialuenimissä</string>
+      <string id="DNS_AllowFQDNNetBiosQueries_Help">Määrittää, että NetBIOS TCP/IP:n päällä (NetBT) -kyselyt annetaan täydellisille toimialuenimille. 
+
+Jos otat tämän käytäntöasetuksen käyttöön, NetBT-kyselyt annetaan moniosaisille nimille ja täydellisille toimialuenimille, kuten www.esimerkki.com yksiosaisten nimien lisäksi.  
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, NetBT-kyselyt annetaan vain yksiosaisille nimille, kuten "esimerkki", eikä moniosaisille nimille ja täydellisille toimialuenimille.</string>
+      <string id="DNS_PreferLocalResponsesOverLowerOrderDns">Suosi linkin paikallisia vastauksia DNS-vastausten sijasta, kun ne vastaanotetaan verkosta, jonka prioriteetti on korkeampi</string>
+      <string id="DNS_PreferLocalResponsesOverLowerOrderDns_Help">Määrittää, että vastaukset linkin paikallisesta nimenselvitysprotokollasta, jotka on vastaanotettu sellaisen verkkoliittymän kautta, jonka sidontajärjestys on korkeampi, ovat ensisijaisia sidontajärjestykseltään alhaisemmista verkkoliittymistä vastaanotettuihin DNS-vastauksiin nähden. Linkin paikallisen nimenselvitysprotokollan esimerkkejä ovat linkin paikallisen monilähetyksen nimenselvitys (LLMNR) ja NetBIOS TCP/IP:n päällä (NetBT).
+
+Jos otat tämän käytäntöasetuksen käyttöön, vastaukset linkin paikallisista protokollista ovat ensisijaisia DNS-vastauksiin nähden, jos paikalliset vastaukset ovat verkosta, jonka sidontajärjestys on korkeampi.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, sidontajärjestykseltään alhaisemmista verkoista vastaanotetut DNS-vastaukset ovat ensisijaisia sidontajärjestykseltään korkeampien verkkojen linkin paikallisista protokollista vastaanotettuihin vastauksiin nähden.
+
+Huomautus: tätä käytäntöasetusta voi käyttää vain, jos Poista älykäs, useita tietokoneita sisältävän palvelimen nimenselvitys käytöstä -käytäntöasetus on poistettu käytöstä tai sitä ei ole määritetty</string>
+      <string id="DNS_IdnEncoding">Poista IDN-koodaus käytöstä</string>
+      <string id="DNS_IdnEncoding_Help">Määrittää, muuntaako DNS-asiakas kansainvälistetyt toimialuenimet (IDN:t) Punycode-muotoon, kun DNS-asiakas on ei-toimialueverkoissa, joissa WINS-palvelimia ei ole määritetty.
+
+Jos tämä käytäntöasetus on käytössä, KANSAN-koodeja ei muunneta Punycode-muotoon.
+
+Jos tämä käytäntöasetus on poistettu käytöstä tai jos tätä käytäntöasetusta ei ole määritetty, tunnukset muunnetaan Punycode-muotoon, kun DNS-asiakas on ei-toimialueverkoissa, joissa WINS-palvelimia ei ole määritetty.</string>
+      <string id="DNS_IdnMapping">IDN-määritys</string>
+      <string id="DNS_IdnMapping_Help">Määrittää, muuntaako DNS-asiakas kansainvälistetyt toimialuenimet (IDN:t) Nameprep-muotoon, joka on merkkijonon kanoninen Unicode-esitys.
+
+Jos tämä käytäntöasetus on käytössä, kansainvälistetyt toimialuenimet muunnetaan Nameprep-muotoon.
+
+Jos tämä käytäntöasetus poistetaan käytöstä tai jos sitä ei määritetä, kansainvälistettyjä toimialuenimiä ei muunneta Nameprep-muotoon.</string>
+      <string id="DNS_Doh">Määritä salatun nimen tarkkuus</string>
+      <string id="DNS_Doh_Disabled">Estä salaus</string>
+      <string id="DNS_Doh_Auto">Salli salaus</string>
+      <string id="DNS_Doh_Force">Vaadi salaus</string>
+      <string id="DNS_Doh_Setting_Allow">Salli DoH</string>
+      <string id="DNS_Doh_Setting_Block">Estä DoH</string>
+      <string id="DNS_Dot_Setting_Allow">Salli DoT</string>
+      <string id="DNS_Dot_Setting_Block">Estä DoT</string>
+      <string id="DNS_Doh_Help">Määrittää, suorittaako DNS-asiakas nimenselvityksen salatuissa protokollissa.
+
+DNS-asiakas suorittaa oletusarvoisesti perinteisen DNS-nimenselvityksen (UDP- tai TCP-portin 53 kautta). Tämä asetus voi parantaa DNS-asiakasta käyttämään salattuja protokollia toimialuenimien ratkaisemiseen.
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja valitse sitten jokin seuraavista vaihtoehdoista avattavasta luettelosta:
+
+Estä salaus: salatun nimen selvitystä ei suoriteta.
+
+Salli salaus: Käytä salatun nimen selvitystä, jos määritetyt palvelimet tukevat sitä. Jos he eivät tue sitä, kokeile perinteistä nimen tarkkuutta.
+
+Edellytä salausta: Salli vain salatun nimen selvittäminen. Jos salausta käsitteleviä määritettyjä DNS-palvelimia ei ole, nimenselvitys epäonnistuu.
+
+Yleisen salauskäytännön lisäksi voidaan määrittää lisäkäytäntöjä yksittäisellä protokollatasolla.
+
+Jos esimerkiksi pakotat vain DoT-nimenselvityksen, tarvitaan "Vaadi salaus" ja "Estä DoH" -yhdistelmä (toisin päin DoH:n pakottamiseksi).
+
+Yllä olevassa esimerkissä järjestelmänvalvojan vastuulla on varmistaa, että jos DoT pakotetaan, koneessa on määritetty kelvolliset pistepalvelimet (toisin päin DoH:ta).
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, DNS-asiakas käyttää paikallisesti määritettyjä asetuksia. DDR (määritettyjen selvitysten etsiminen) -tekstimuotoinen liikenne sallitaan, koska se on tarpeen salausasetusten automaattista löytämistä varten.</string>
+      <string id="DNS_Netbios">NetBIOS-asetusten määrittäminen</string>
+      <string id="DNS_Netbios_Disable">Poista NetBIOS-nimenselvitys käytöstä</string>
+      <string id="DNS_Netbios_Allow">Salli NetBIOS-nimenselvitys</string>
+      <string id="DNS_Netbios_Disable_Public_Networks">Poista NetBIOS-nimenselvitys käytöstä julkisissa verkoissa</string>
+      <string id="DNS_Netbios_Learning_Mode">NetBIOS-oppimistila</string>
+      <string id="DNS_Netbios_Help">Määrittää, suorittaako DNS-asiakas nimenselvityksen NetBIOSin kautta.
+
+Oletusarvoisesti DNS-asiakas poistaa NetBIOS-nimenselvityksen käytöstä julkisissa verkoissa tietoturvasyistä.
+
+Jos haluat käyttää tätä käytäntöasetusta, valitse Käytössä ja valitse sitten jokin seuraavista vaihtoehdoista avattavasta luettelosta:
+
+Poista NetBIOS-nimenselvitys käytöstä: Älä koskaan salli NetBIOS-nimenselvitystä.
+
+Salli NetBIOS-nimenselvitys: Salli NetBIOS-nimenselvitys aina.
+
+Poista NetBIOS-nimenselvitys käytöstä julkisissa verkoissa: Salli NetBIOS-nimenselvitys vain verkkosovittimissa, jotka eivät ole yhteydessä julkisiin verkkoihin.
+
+NetBIOS-oppimistila: Salli NetBIOS-nimenselvitys aina ja käytä sitä varatoimena, kun mDNS/LLMNR-kyselyt epäonnistuvat.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai et määritä tätä käytäntöasetusta, tietokoneet käyttävät paikallisesti määritettyjä asetuksia.</string>
+      <string id="DNS_Ddr">Määritä DDR (Designated Resolvers) -protokollan etsintä</string>
+      <string id="DNS_Ddr_Help">Määrittää, käyttääkö DNS-asiakas DDR-protokollaa.
+
+DDR (Designated Resolvers) -protokollan avulla Windows voi siirtyä salaamattomasta DNS:stä salattuun DNS:ään, kun vain ratkaisijan IP-osoite on tiedossa.
+
+Jos otat tämän käytännön käyttöön, DNS-asiakas käyttää DDR-protokollaa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallisesti määritettyjä asetuksia.</string>
+      <string id="DNS_MDNS">Määritä monilähetyksen DNS (mDNS) -protokolla</string>
+      <string id="DNS_MDNS_Help">Määrittää, suorittaako DNS-asiakas nimenselvityksen mDNS:n avulla.
+
+Jos otat tämän käytännön käyttöön, DNS-asiakas käyttää mDNS-protokollaa.
+
+Jos poistat tämän käytäntöasetuksen käytöstä tai jos et määritä sitä, DNS-asiakas käyttää paikallisesti määritettyjä asetuksia.</string>
+      <string id="DNS_TurnOffIPv6DefaultDnsServers">Poista oletusarvoiset IPv6 DNS -palvelimet käytöstä</string>
+      <string id="DNS_TurnOffIPv6DefaultDnsServers_Help">Jos otat tämän käytännön käyttöön, DNS-asiakas ei käytä Windowsin tarjoamia oletusarvoisia IPv6 DNS -palvelinosoitteita.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="DNS_Domain">
+        <textBox refId="DNS_DomainLabel">
+          <label>DNS-liite:</label>
+        </textBox>
+      </presentation>
+      <presentation id="DNS_NameServer">
+        <textBox refId="DNS_NameServerLabel">
+          <label>IP-osoitteet:</label>
+        </textBox>
+      </presentation>
+      <presentation id="DNS_PrimaryDnsSuffix">
+        <textBox refId="DNS_PrimaryDnsSuffixBox">
+          <label>Kirjoita ensisijainen DNS-liite:</label>
+        </textBox>
+      </presentation>
+      <presentation id="DNS_RegisterReverseLookup">
+        <dropdownList refId="DNS_RegisterReverseLookup_Box" defaultItem="0">Rekisteröi PTR-tietueet:</dropdownList>
+      </presentation>
+      <presentation id="DNS_RegistrationRefreshInterval">
+        <decimalTextBox refId="DNS_RegistrationRefreshIntervalLabel" defaultValue="1800" spinStep="100">Sekuntia:</decimalTextBox>
+      </presentation>
+      <presentation id="DNS_DomainNameDevolutionLevel">
+        <decimalTextBox refId="DNS_DomainNameDevolutionLevelLabel" defaultValue="2" spinStep="1">Määritä ensisijaisen DNS-liitteen lyhentämistaso</decimalTextBox>
+      </presentation>
+      <presentation id="DNS_RegistrationTtl">
+        <decimalTextBox refId="DNS_RegistrationTtlLabel" defaultValue="600" spinStep="100">Sekuntia:</decimalTextBox>
+      </presentation>
+      <presentation id="DNS_SearchList">
+        <textBox refId="DNS_SearchListLabel">
+          <label>DNS-liitteet:</label>
+        </textBox>
+      </presentation>
+      <presentation id="DNS_UpdateSecurityLevel">
+        <dropdownList refId="DNS_UpdateSecurityLevel_Box" defaultItem="2">Päivityksen suojaustaso:</dropdownList>
+      </presentation>
+      <presentation id="DNS_Doh">
+        <dropdownList refId="DNS_Doh_Box" defaultItem="0">Määritä salausasetukset:</dropdownList>
+        <dropdownList refId="DNS_Doh_Setting_Box" defaultItem="0">Määritä DoH-kohtaiset asetukset:</dropdownList>
+        <dropdownList refId="DNS_Dot_Setting_Box" defaultItem="0">Määritä DoT-kohtaiset asetukset:</dropdownList>
+      </presentation>
+      <presentation id="DNS_Netbios">
+        <dropdownList refId="DNS_Netbios_Box" defaultItem="1">Määritä NetBIOS-asetukset:</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

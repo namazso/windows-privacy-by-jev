@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>SAM 设置</displayName>
+  <description>安全帐户管理员的配置设置</description>
+  <resources>
+    <stringTable>
+      <string id="SAM">SAM</string>
+      <string id="SecurityAccountManager">安全帐户管理员</string>
+      <string id="SamNGCKeyROCAValidation">配置易受 ROCA 攻击的 WHfB 密钥在身份验证期间的验证</string>
+      <string id="SamNGCKeyROCAValidationNone">忽略易受 ROCA 攻击的 WHfB 密钥</string>
+      <string id="SamNGCKeyROCAValidationAudit">审核使用中的易受 ROCA 攻击的 WHfB 密钥</string>
+      <string id="SamNGCKeyROCAValidationBlock">阻止使用中的易受 ROCA 攻击的 WHfB 密钥</string>
+      <string id="SamNGCKeyROCAValidation_explain">通过此策略设置，可配置域控制器如何处理易受到 “Return of Coppersmith's attack”(ROCA) 漏洞攻击的 Windows Hello 企业版 (WHfB) 密钥。
+
+有关 ROCA 漏洞的详细信息，请参阅：
+
+https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-15361
+
+https://en.wikipedia.org/wiki/ROCA_vulnerability
+
+如果启用此策略设置，支持以下选项：
+
+忽略：在身份验证过程中，域控制器将不会探测任何 WHfB 密钥以查找 ROCA 漏洞。
+
+审核：在身份验证过程中，域控制器将针对受 ROCA 漏洞威胁的 WHfB 密钥发出审核事件（身份验证仍然会成功）。
+
+阻止：在身份验证期间，域控制器将阻止使用受 ROCA 漏洞影响的 WHfB 项（身份验证将失败）。
+
+此设置仅会在域控制器上生效。
+
+如果未配置，则域控制器将默认使用其本地配置。默认本地配置为“审核”。
+
+不需要重启，对此设置的更改即会生效。
+
+注意：为了避免意外中断，不应将此设置设为“阻止”，直至执行相应的缓解操作（例如修补有漏洞的 TPM）。
+
+可在 https://go.microsoft.com/fwlink/?linkid=2116430 了解更多详细信息。
+</string>
+      <string id="SamrChangeUserPasswordApiPolicy">配置 SAM 更改密码 RPC 方法策略</string>
+      <string id="SamrChangeUserPasswordApiPolicyBlockAll">阻止所有更改密码 RPC 方法</string>
+      <string id="SamrChangeUserPasswordApiPolicyAllowSecure">仅允许强加密更改密码 RPC 方法</string>
+      <string id="SamrChangeUserPasswordApiPolicyAllowAll">允许所有更改密码 RPC 方法</string>
+      <string id="SamrChangeUserPasswordApiPolicyExplain">此策略使管理员能够在安全帐户管理器(SAM)中配置更改用户密码 RPC 方法的远程使用。
+
+启用策略时，支持以下选项：
+
+阻止所有更改密码 RPC 方法： 阻止远程使用所有安全帐户管理器(SAM)更改密码 RPC 方法。
+
+允许强加密更改密码 RPC 方法： 允许远程使用使用使用强加密的更改密码 RPC 方法，并阻止远程使用弱加密方法。
+
+允许所有更改密码 RPC 方法： 允许远程使用所有更改密码 RPC 方法，使加密不重复。
+
+默认策略： 1. 域成员计算机 - 阻止所有更改密码 RPC 方法。
+                2. 域控制器 - 允许强加密更改密码 RPC 方法。
+
+注意： 如果禁用或未配置策略，计算机将使用默认策略。
+</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="SamNGCKeyROCAValidation">
+        <dropdownList refId="SamNGCKeyROCAValidation_Settings" noSort="true" defaultItem="2">用于处理易受 ROCA 攻击的 WHfB 密钥的选项：</dropdownList>
+      </presentation>
+      <presentation id="SamrChangeUserPasswordApiPolicy">
+        <dropdownList refId="SamrChangeUserPasswordApiPolicySettings" noSort="true" defaultItem="1">Sam 密码更改 RPC 方法策略的选项：</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

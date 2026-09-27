@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2015 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Microsoft Windows Device Guard</displayName>
+  <description>Windows Device Guard Security</description>
+  <resources>
+    <stringTable>
+      <string id="DeviceGuard">Device Guard</string>
+      <string id="VirtualizationBasedSecurity">Aktivér virtualiseringsbaseret sikkerhed</string>
+      <string id="VirtualizationBasedSecurityHelp">
+          Angiver, om virtualiseringsbaseret sikkerhed er aktiveret.
+
+          Virtualiseringsbaseret sikkerhed bruger Windows Hypervisor til at yde support til sikkerhedstjenester. Sikkerhed baseret på virtualisering kræver sikker bootstart og kan eventuelt aktiveres ved hjælp af DMA-beskyttelse. DMA-beskyttelse kræver hardwareunderstøttelse og vil kun blive aktiveret på korrekt konfigurerede enheder.
+
+          Virtualiseringsbaseret beskyttelse af kodeintegritet
+
+          Denne indstilling aktiverer virtualiseringsbaseret beskyttelse af kodeintegritet i kernetilstand. Når dette er aktiveret, gennemtvinges hukommelsesbeskyttelse i kernetilstand, og valideringsstien til kodeintegritet beskyttes af den virtualiseringsbaserede sikkerhedsfunktion.
+
+          Indstillingen "Deaktiveret" deaktiverer virtualiseringsbeskyttelse af kodeintegritet eksternt, hvis den tidligere var slået til med indstillingen "Aktiveret uden lås".
+
+          Indstillingen "Aktiveret med UEFI-lås" sikrer, at virtualiseringsbaseret beskyttelse af kodeintegritet ikke kan deaktiveres eksternt. Hvis du vil deaktivere funktionen, skal du angive Gruppepolitik til "Deaktiveret" samt fjerne sikkerhedsfunktionaliteten fra hver enkelt computer med en fysisk til stede bruger for at rydde konfigurationen permanent i UEFI.
+
+          Indstillingen "Aktiveret uden UEFI-lås" tillader, at virtualiseringsbaseret beskyttelse af kodeintegritet kan deaktiveres eksternt ved brug af Gruppepolitik.
+
+          Indstillingen "Ikke konfigureret" lader politikindstillingen være udefineret. Gruppepolitik skriver ikke politikindstillingen til registreringsdatabasen, og det har derfor ingen indvirkning på computere eller brugere. Hvis der er en aktuel indstilling i registreringsdatabasen, ændres den ikke.
+
+          Indstillingen "Require UEFI Memory Attributes Table" aktiverer kun virtualiseringsbaseret beskyttelse af kodeintegritet på enheder med understøttelse af UEFI-firmware for tabellen Hukommelsesattributter. Enheder uden tabellen UEFI-hukommelsesattributter kan have firmware, der er inkompatibel med virtualiseringsbaseret beskyttelse af kodeintegritet, hvilket i nogle tilfælde kan medføre nedbrud eller datatab eller inkompatibilitet med visse plugin-kort. Hvis du ikke angiver denne indstilling, skal de målrettede enheder testes for at sikre kompatibilitet.
+
+          Advarsel! Alle drivere på systemet skal være kompatible med denne funktion, ellers kan systemet gå ned. Sørg for, at denne politikindstilling kun installeres på computere, der er kendt til at være kompatible.
+
+          Credential Guard
+
+          Denne indstilling giver brugerne mulighed for at aktivere Credential Guard med virtualiseringsbaseret sikkerhed for at beskytte legitimationsoplysninger.
+
+          I Windows 11 21H2 og tidligere slår indstillingen "Deaktiveret" Credential Guard fra eksternt, hvis den tidligere var slået til med indstillingen "Aktiveret uden lås". I senere versioner slår indstillingen "Deaktiveret" Credential Guard fra eksternt, hvis den tidligere var slået til med indstillingen "Aktiveret uden lås" eller var "Ikke konfigureret".
+
+          Indstillingen "Aktiveret med UEFI-lås" sikrer, at Credential Guard ikke kan deaktiveres eksternt. Hvis du vil deaktivere funktionen, skal du angive Gruppepolitik til "Deaktiveret" samt fjerne sikkerhedsfunktionaliteten fra hver enkelt computer med en fysisk til stede bruger for at rydde konfigurationen permanent i UEFI.
+
+          Indstillingen "Aktiveret uden lås" tillader, at Credential Guard deaktiveres eksternt ved hjælp af Gruppepolitik. De enheder, der bruger denne indstilling, skal køre mindst Windows 10 (version 1511).
+
+          For Windows 11 21H2 og tidligere, lader indstillingen "Ikke konfigureret" politikindstillingen være udefineret. Gruppepolitik skriver ikke politikindstillingen til registreringsdatabasen, og det har derfor ingen indvirkning på computere eller brugere. Hvis der er en aktuel indstilling i registreringsdatabasen, ændres den ikke. Hvis der ikke er nogen aktuel indstilling i registreringsdatabasen for nyere versioner, aktiverer indstillingen "Ikke konfigureret" Credential Guard uden UEFI-lås.
+
+          Isolering af computeridentitet
+
+          Denne indstilling styrer Credential Guard-beskyttelse af Active Directory-computerkonti. Aktivering af denne politik har visse forudsætninger. Du kan finde forudsætningerne og flere oplysninger om denne politik på https://go.microsoft.com/fwlink/?linkid=2251066.
+
+          Indstillingen "Ikke konfigureret" lader politikindstillingen være udefineret. Gruppepolitik skriver ikke politikindstillingen til registreringsdatabasen, og det har derfor ingen indvirkning på computere eller brugere. Hvis der er en aktuel indstilling i registreringsdatabasen, ændres den ikke.
+
+          Indstillingen "Deaktiveret" deaktiverer Isolering af computeridentitet. Hvis denne politik tidligere var indstillet til "Aktiveret i overvågningstilstand", kræves der ingen yderligere handling. Hvis denne politik tidligere var indstillet til “Aktiveret i håndhævelsestilstand”, skal enheden fjernes og tilsluttes domænet igen. Du kan finde flere oplysninger på linket ovenfor.
+
+          Indstillingen "Aktiveret i overvågningstilstand" kopierer computeridentiteten til Credential Guard. Både LSA og Credential Guard har adgang til computeridentiteten. Dette giver brugerne mulighed for at validere, at "Aktiveret i håndhævelsestilstand" fungerer i deres Active Directory-domæne.
+
+          Indstillingen "Aktiveret i håndhævelsestilstand" flytter computeridentiteten til Credential Guard. Dette gør computeridentiteten kun tilgængelig for Credential Guard.
+
+          Sikker start
+
+          Denne indstilling angiver konfigurationen af Sikker start for at sikre startkæden.
+
+          "Ikke konfigureret" er standardindstillingen og tillader administrative brugere at konfigurere funktionen.
+
+          Indstillingen "Aktiveret" aktiverer Sikker start på understøttet hardware.
+
+          Indstillingen "Deaktiveret" deaktiverer Sikker start uanset hardwareunderstøttelse.
+
+          Hardwarepåtvunget stakbeskyttelse i kernetilstand
+
+          Denne indstilling aktiverer hardwaretvunget stakbeskyttelse for kernetilstandskode. Når denne sikkerhedsfunktion er aktiveret, hærdes datastakke i kernetilstand med hardwarebaserede skyggestakke, som lagrer tilsigtede afsenderadressemål for at sikre, at programstyringsflowet ikke er ændret.
+
+          Denne sikkerhedsfunktion har følgende forudsætninger:
+          1) CPU-hardwaren understøtter hardwarebaserede skyggestakke.
+          2) Virtualiseringsbaseret beskyttelse af kodeintegritet er aktiveret.
+
+          Hvis en af forudsætningerne ikke er opfyldt, aktiveres denne funktion ikke, selvom der er valgt en "Aktiveret"-indstilling for denne funktion. Bemærk, at valg af indstillingen "Aktiveret" for denne funktion ikke automatisk aktiverer Virtualiseringsbaseret beskyttelse af kodeintegritet, der skal udføres separat.
+
+          Enheder, der aktiverer denne sikkerhedsfunktion, skal køre mindst Windows 11 (Version 22H2).
+
+          Indstillingen "Deaktiveret" deaktiverer hardwarepåtvunget stakbeskyttelse i kernetilstand.
+
+          Indstillingen "Aktiveret i overvågningstilstand" aktiverer hardwaretvunget stakbeskyttelse i kernetilstand i overvågningstilstand, hvor overtrædelser af skyggestakken ikke er alvorlige.
+
+          Indstillingen "Aktiveret i håndhævelsestilstand" aktiverer hardwaretvunget stakbeskyttelse i kernetilstand i håndhævelsestilstand, hvor overtrædelser af skyggestakken er alvorlige.
+
+          Indstillingen "Ikke konfigureret" lader politikindstillingen være udefineret. Gruppepolitik skriver ikke politikindstillingen til registreringsdatabasen, og det har derfor ingen indvirkning på computere eller brugere. Hvis der er en aktuel indstilling i registreringsdatabasen, ændres den ikke.
+
+          Advarsel! Alle drivere på systemet skal være kompatible med denne sikkerhedsfunktion, ellers kan systemet gå ned i håndhævelsestilstand. Overvågningstilstand kan bruges til at finde inkompatible drivere. Se https://go.microsoft.com/fwlink/?LinkId=2162953 for at få flere oplysninger.
+      </string>
+      <string id="SecureBoot">Sikker bootstart</string>
+      <string id="SecureBootAndDmaProtection">Sikker bootstart og DMA-beskyttelse</string>
+      <string id="Disabled">Deaktiveret</string>
+      <string id="Enabled">Aktiveret</string>
+      <string id="EnabledWithoutLock">Aktiveret uden Lås</string>
+      <string id="EnabledWithUefiLock">Aktiveret med UEFI-lås</string>
+      <string id="EnabledAudit">Aktiveret i overvågningstilstand</string>
+      <string id="EnabledEnforcement">Aktiveret i håndhævelsestilstand</string>
+      <string id="NotConfigured">Ikke konfigureret</string>
+      <string id="ConfigCIPolicy">Udrul App Control til virksomheder</string>
+      <string id="ConfigCIPolicyHelp">Udrul appobjekt til virksomheder
+
+Med denne politikindstilling kan du installere en politik for kodeintegritet på en computer for at styre, hvad der er tilladt at køre på computeren.
+
+Hvis du installerer en politik for kodeintegritet, begrænser Windows, hvad der kan køres i både kernetilstand og på Windows-skrivebordet baseret på politikken. Computeren skal genstartes for at aktivere denne politik.
+
+Filstien skal enten være en UNC-sti (f.eks. \\Servernavn\Sharenavn\SIPolicy.p7b) eller en lokal gyldig sti (f.eks. C:\Mappenavn\SIPolicy.p7b).  Kontoen for den lokale computer (LOCAL SYSTEM) skal have adgangstilladelse til politikfilen.
+
+Hvis du bruger en signeret og beskyttet politik, vil deaktivering af denne politikindstilling ikke fjerne funktionen fra computeren. I stedet skal du enten:
+
+1) først opdatere politikken til en ikke-beskyttet politik og derefter deaktivere indstillingen, eller
+   2) deaktivere indstillingen og derefter fjerne politikken fra hver computer, hvor brugeren fysisk er til stede.
+      </string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="VirtualizationBasedSecurity">
+        <dropdownList refId="RequirePlatformSecurityFeaturesDrop" defaultItem="1">Vælg sikkerhedsniveau for platform:</dropdownList>
+        <dropdownList refId="HypervisorEnforcedCodeIntegrityDrop" defaultItem="3">Virtualiseringsbaseret beskyttelse af kodeintegritet:</dropdownList>
+        <checkBox refId="CheckboxMAT">Kræv UEFI-hukommelsesattributtabel</checkBox>
+        <dropdownList refId="CredentialIsolationDrop" defaultItem="3">Konfiguration af Credential Guard:</dropdownList>
+        <dropdownList refId="MachineIdentityIsolationDrop" defaultItem="3">Machine Identity Isolation Configuration:</dropdownList>
+        <dropdownList refId="SystemGuardDrop" defaultItem="2">Sikker startkonfiguration:</dropdownList>
+        <dropdownList refId="KernelShadowStacksDrop" defaultItem="3">Kernetilstand for hardwaretvunget stakbeskyttelse</dropdownList>
+      </presentation>
+      <presentation id="ConfigCIPolicy">
+        <textBox refId="ConfigCIPolicyFilePathText">
+          <label>Filsti til politik for kodeintegritet:</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

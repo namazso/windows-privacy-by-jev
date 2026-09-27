@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) Microsoft. All rights reserved.  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <!-- displayName and description are not used. Not supported by current Group Policy tools. -->
+  <displayName>Styring af AppX-pakke</displayName>
+  <description>Styring af AppX-pakke</description>
+  <resources>
+    <stringTable>
+      <string id="AppxDeployment">Installation af app-pakke</string>
+      <string id="AppxDeploymentAllowAllTrustedApps">Tillad installation af alle de apps, der er tillid til</string>
+      <string id="AppxDeploymentAllowAllTrustedAppsExplanation">Med denne politikindstilling kan du administrere installationen af LOB(Trusted Line of Business) eller udviklersignerede pakkede Microsoft Store-apps.
+
+Hvis du aktiverer denne politikindstilling, kan du installere en hvilken som helst LOB- eller udviklersigneret pakkede Microsoft Store-app (som skal signeres med en certifikatkæde, der kan valideres af den lokale computer).
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, kan du ikke installere LOB eller udviklersignerede pakkede Microsoft Store-apps.</string>
+      <string id="AllowAutomaticAppArchiving">Arkivér sjældent brugte apps</string>
+      <string id="AllowAutomaticAppArchivingExplanation">Denne politikindstilling styrer, om systemet kan arkivere sjældent anvendte apps.
+
+Hvis du aktiverer denne politikindstilling, vil systemet jævnligt søge efter og arkivere sjældent anvendte apps.
+
+Hvis du deaktiverer denne politikindstilling, vil systemet ikke arkivere nogen apps.
+
+Hvis du undlader at konfigurere denne politikindstilling (standard), følger systemet standardfunktionsmåden, som jævnligt søger efter og arkiverer sjældent brugte apps, og brugeren kan selv konfigurere denne indstilling.</string>
+      <string id="AllowDeploymentInSpecialProfiles">Tillade installationshandlinger i særlige profiler</string>
+      <string id="AllowDeploymentInSpecialProfilesExplanation">Med denne politikindstilling kan du administrere udrulningen af pakkede Microsoft Store apps, når brugeren er logget på med en særlig profil. Særlige profiler er følgende brugerprofiler, hvor ændringer kasseres, når brugeren logger af:
+
+Roamingbrugerprofiler, hvor indstillingen "Slet cachelagrede kopier af roamingprofiler" under Gruppepolitik anvendes
+
+Obligatoriske brugerprofiler og super obligatoriske profiler, som oprettes af en administrator
+
+Midlertidige brugerprofiler, som oprettes, når en fejl forhindrer den korrekte profil i at indlæse
+
+Brugerprofiler for Gæstekontoen og medlemmer af gruppen Gæster
+
+
+Hvis du aktiverer denne politikindstilling, tillader Gruppepolitik installationshandlinger (tilføjelse, registrering, midlertidig lagring, opdatering eller fjernelse af en apppakke) af pakkede Microsoft Store apps, når du bruger en særlig profil.
+
+Hvis du deaktiverer eller undlader at konfigurere denne politikindstilling, blokerer Gruppepolitik installationshandlinger for pakkede Microsoft Store apps, når du bruger en særlig profil.</string>
+      <string id="AllowDevelopmentWithoutDevLicense">Tillader udvikling af pakkede Microsoft Store apps og installation af dem fra et integreret udviklingsmiljø (IDE)</string>
+      <string id="AllowDevelopmentWithoutDevLicenseExplanation">
+        Tillader eller afviser udvikling af Microsoft store-programmer og installation af dem direkte fra en IDE.
+
+ Hvis du aktiverer denne indstilling og aktiverer gruppepolitikken »Tillad installering af alle de apps, der er tillid til«, kan du udvikle Microsoft Store-apps og installere dem direkte fra en IDE.
+
+ Hvis du deaktiverer eller ikke konfigurerer denne indstilling, kan du ikke udvikle Microsoft store-apps eller installere dem direkte fra en IDE.
+      </string>
+      <string id="DisableDeploymentToNonSystemVolumes">Deaktiver installation af Windows-apps på drev, som ikke er systemdrev</string>
+      <string id="DisableDeploymentToNonSystemVolumesExplanation">
+        Denne politik gør det muligt at administrere Windows-apps på flere drev som sekundære partitioner, USB-drev eller SD-kort.
+
+        Hvis du aktiverer denne indstilling, kan du ikke flytte eller installere Windows-apps på drev, som ikke er systemdrev.
+
+        Hvis du deaktiverer eller undlader at konfigurere denne indstilling, kan du flytte eller installere Windows-apps på andre drev.
+      </string>
+      <string id="RestrictAppDataToSystemVolume">Undgå, at brugernes data gemmes på drev, som ikke er systemdrev</string>
+      <string id="RestrictAppDataToSystemVolumeExplanation">
+        Undgå, at brugernes appdata flyttes til en anden placering, når en app flyttes til eller installeres på et andet sted.
+
+        Hvis du aktiverer denne indstilling, forbliver alle brugernes data på systemdrevet, uanset hvor appen er installeret.
+
+        Hvis du deaktiverer eller undlader at konfigurere denne indstilling, betyder det, når en app flyttes til et andet drev, flyttes brugernes data også til dette drev.
+      </string>
+      <string id="AllowSharedLocalAppData">Tillad, at en Windows-app kan dele programdata mellem brugere</string>
+      <string id="AllowSharedLocalAppDataExplanation">Administrerer en Windows-apps mulighed for at dele data mellem brugere, der har installeret appen.
+
+        Hvis du aktiverer denne politik, kan en Windows-app dele appdata med andre forekomster af den app. Data deles via mappen SharedLocal. Denne mappe er tilgængelig via Windows.Storage-API'en.
+
+        Hvis du deaktiverer denne politik, kan en Windows-app ikke dele appdata med andre forekomster af den app. Hvis denne politik tidligere var aktiveret, forbliver alle tidligere delte appdata i mappen SharedLocal.
+      </string>
+      <string id="BlockNonAdminUserInstall">Forbyd brugere, der ikke er administratorer, i at installere pakkede Windows-apps</string>
+      <string id="BlockNonAdminUserInstallExplanation">Styrer muligheden for, at brugere, der ikke er administratorer, kan installere Windows-app-pakker.
+
+        Hvis du aktiverer denne politik, vil ikke-administratorer ikke kunne starte installationen af Windows-app-pakker. Administratorer, der ønsker at installere en app, skal gøre det fra en administratorkontekst (f.eks. et administratorvindue i PowerShell). Alle brugere vil stadig kunne installere Windows-app-pakker via Microsoft Store, hvis det er tilladt i andre politikker.
+
+        Hvis du deaktiverer eller undlader at konfigurere denne politik, kan alle brugere starte installationen af Windows-app-pakker.
+      </string>
+      <string id="DisableBackgroundAutoUpdates">Tillad ikke, at sideindlæste apps opdateres automatisk i baggrunden</string>
+      <string id="DisableBackgroundAutoUpdatesExplanation">Administrerer en sideloadet apps' mulighed for automatisk opdatering i baggrunden. 
+
+        Hvis du aktiverer denne politik, opdateres sideloadede apps ikke automatisk i baggrunden.
+
+        Hvis du deaktiverer denne politik, opdateres sideloadede apps automatisk i baggrunden.
+
+        Standard er "deaktiveret" (nøglen findes ikke).
+      </string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdates">Tillad ikke, at sideindlæste apps opdateres automatisk i baggrunden på et netværk efter forbrug</string>
+      <string id="DisableMeteredNetworkBackgroundAutoUpdatesExplanation">Administrerer en sideloadet apps' mulighed for automatisk at opdatere i baggrunden på et forbrugsbaseret netværk. 
+
+        Hvis du aktiverer denne politik, opdateres sideindlæste apps ikke automatisk i baggrunden på et netværk efter forbrug.
+
+        Hvis du deaktiverer denne politik, opdateres sideloadede apps automatisk i baggrunden på et forbrugsbaseret netværk.
+
+        Standard er "deaktiveret" (nøglen findes ikke).
+      </string>
+      <string id="DisablePerUserUnsignedPackagesByDefault">Tillad ikke, at ikke-signerede pakker pr. bruger installeres som standard (kræver eksplicit tilladelse pr. installation)</string>
+      <string id="DisablePerUserUnsignedPackagesByDefaultExplanation">Tillad ikke, at ikke-signerede pakker pr. bruger installeres som standard (kræver eksplicit tilladelse pr. installation)
+
+        Hvis du aktiverer denne politik, vil indstillingen AllowUnsigned som standard være "falsk".
+
+        Hvis du deaktiverer denne politik, vil indstillingen AllowUnsigned som standard være "Sand".
+
+        Standarden er "deaktiveret" (nøglen findes ikke).
+      </string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>
